@@ -1,0 +1,314 @@
+﻿{
+  "Version": "1.0",
+  "Metadata": [
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "in_str_Jobstatusurl",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "StrUrl",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "cch.commonuiframework.shell.exe",
+        "IsExpression": true
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "cch.commonuiframework.shell.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": true
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "in_Config(\"GoSystem_URL\").ToString + \"*\"",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "in_Config(\"GoSystem_URL\").ToString",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": true
+      },
+      "Url": {
+        "Value": "in_Config(\"ProformaDetailsBrowser\").ToString",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "*tax.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "w*tax.exe",
+        "IsExpression": true
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "w*tax.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "utw*.exe",
+        "IsExpression": true
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "utw*",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "utw*.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "in_Config(\"UltraOnvioURL\").ToString",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "pingid.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "in_Config(\"in_str_JobDetails\").ToString",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "strFileroomUrl",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "strCiamUrl",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "strLandingURL",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "in_Config(\"in_str_Fileroomurl\").ToString",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Chrome",
+      "ExecutablePath": {
+        "Value": "chrome.exe",
+        "IsExpression": true
+      },
+      "Url": {
+        "Value": "in_Config(\"in_str_URLPath\").ToString",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "submissionwizard.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "w21tax.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "accountserver.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "excel.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": {
+        "Value": "in_Config(\"InputFilePath\").ToString",
+        "IsExpression": true
+      },
+      "Version": null
+    }
+  ]
+}

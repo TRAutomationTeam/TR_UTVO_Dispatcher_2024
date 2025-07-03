@@ -1,0 +1,1143 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="UTVO_LogIn" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ClientDetails" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2986.4,4505.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>UTVO_LogIn_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>Microsoft.Graph</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="UTVO_LogIn" sap:VirtualizedContainerService.HintSize="2996.8,4440.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ConfinPath" />
+      <Variable x:TypeArguments="x:String" Name="Application" />
+      <Variable x:TypeArguments="x:String" Name="UserName" />
+      <Variable x:TypeArguments="x:String" Name="Password" />
+      <Variable x:TypeArguments="sd:DataTable" Name="LogInCredentials" />
+      <Variable x:TypeArguments="x:String" Name="TaxYear" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Clie" />
+      <Variable x:TypeArguments="ss:SecureString" Name="ssPingId_Pin" />
+      <Variable x:TypeArguments="x:String" Name="str_TRUserName" />
+      <Variable x:TypeArguments="ss:SecureString" Name="ss_TRPassword" />
+      <Variable x:TypeArguments="x:String" Name="strTR_EmailID" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Read Input Data" sap:VirtualizedContainerService.HintSize="2934.4,870.4" sap2010:WorkflowViewState.IdRef="Sequence_37">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ReadRange WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[LogInCredentials]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="1216.8,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1:B4" SheetName="Login Details" WorkbookPath="[in_Config(&quot;InputFilePath&quot;).ToString]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ReadRange>
+      <Parallel sap:VirtualizedContainerService.HintSize="1216.8,221.6" sap2010:WorkflowViewState.IdRef="Parallel_1">
+        <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="TR_EmailID" CacheStrategy="None" DisplayName="Get Asset" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="374.4,143.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+          <ui:GetRobotAsset.Value>
+            <OutArgument x:TypeArguments="x:String">[strTR_EmailID]</OutArgument>
+          </ui:GetRobotAsset.Value>
+        </ui:GetRobotAsset>
+        <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="TR_SSOLogin" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="374.4,143.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[ss_TRPassword]" Username="[str_TRUserName]" />
+        <ui:GetRobotCredential Password="{x:Null}" TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="PingID_Password" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="374.4,143.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_6" />
+      </Parallel>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1216.8,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[Application]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[LogInCredentials.Rows(0).Item(1).ToString.Trim]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[UserName]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[LogInCredentials.Rows(1).Item(1).ToString.Trim]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[Password]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[LogInCredentials.Rows(2).Item(1).ToString.Trim]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[TaxYear]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_ClientDetails("Year").ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1216.8,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Input File&quot;]" />
+    </Sequence>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Enter LogIn credentials" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="2934.4,2635.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="2900.8,2386.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="2838.4,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,136.8" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Check App State 'Sign in'" sap:VirtualizedContainerService.HintSize="353.6,48" sap2010:WorkflowViewState.IdRef="NCheckState_18" ScopeIdentifier="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Timeout="50" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/#/" CvElementArea="805, 530, 327, 47" CvTextArea="857, 545, 223, 17" CvTextArgument="Sign in with Thomson Reuters Account" CvType="Button" DesignTimeRectangle="809, 533, 321, 39" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='' aaname='Sign in with Thomson Reuters Account' check:innerText='Sign in with Thomson Reuters Account' /&gt;" Guid="44997a25-1985-4ac8-87f0-1e8774adadbc" InformativeScreenshot="7c6070f6c4134df05f8340d472976b1b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/#/" CvElementArea="805, 530, 327, 47" CvTextArea="857, 545, 223, 17" CvTextArgument="Sign in with Thomson Reuters Account" CvType="Button" DesignTimeRectangle="809, 533, 321, 39" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='' aaname='Sign in with Thomson Reuters Account' check:innerText='Sign in with Thomson Reuters Account' /&gt;" Guid="44997a25-1985-4ac8-87f0-1e8774adadbc" InformativeScreenshot="7c6070f6c4134df05f8340d472976b1b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/#/" CvElementArea="805, 530, 327, 47" CvTextArea="857, 545, 223, 17" CvTextArgument="Sign in with Thomson Reuters Account" CvType="Button" DesignTimeRectangle="809, 533, 321, 39" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='' aaname='Sign in with Thomson Reuters Account' check:innerText='Sign in with Thomson Reuters Account' /&gt;" Guid="72b9b1af-7323-4ad6-b9a8-a6f937c9bc4f" InformativeScreenshot="b90f416e37ffbd13d12b154673b59125.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="907, 482, 122, 26" CvTextArgument="Firm 422" CvType="Text" DesignTimeRectangle="809, 478, 321, 35" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='NetfirmLogin-form--item NetfirmLogin-brand--title' aaname='Firm 422' check:innerText='Firm 422' /&gt;" Guid="8d346ca9-ed18-4f8e-86fb-f10d877eaf55" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUUAAAAnCAYAAACYP1q4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVOSURBVHhe7Zy/ayJNGMfzZ2wrpAlckXRaRrgiC1e8QooTLCSVyBUvkuJF0gSrIFccVoekOFiLA9/iYJsXTHOgxQu+RcArDkyRwiLFFim2sHjeWV11dmZ2z9312FG+H3iKZJ6ZrEI++8yP3SMCAACwBlIEAAAOSBEAADggRQAA4IAUAQCAA1IEAAAOSBEAADggRQAA4IAUAQCAA1I8dJ5salzk6OjIoJP3HRq/+r8HACiBFDVm1isxmR3Fj9uhP8KEOvlgm/HBJsdvPUTcUYsK3OddxKVFM79d4nVK47+71KyVqPjGCPTL5Yt0dd0hazQj109X4b5MaNDrUKNapMIx93e9G9F5ieo3XbJ/HPK3flhAihqTWorPFpWk9hatlHlwvA6oYYifl4VKiu6U+tcm5cTckDDOmzR48fuueBlS+/0JGYp8VeSqXZqgUtceSFFj0leKQ2qJkoiqmvaaKVmVYKUX/ZnH1D5V5EZFnt1QeKk5NtVVeRFhVCx2pUBnIEWNSS/F5XSyuBLj8RX1n/yGA2PaK4dXbCE3gvHHs3WO8cabKrepfbeMZs2kE0XVad7zSnPIrm3acnlvqrwZo1EtKCpRg5oPUZNxkDWQosbIUkw49Z275DhO5LrYPuP+q1hH5COsOh61qXxr0fA55JtxWKUtrMmKY82+Nujqk00TcWq94smisihX7qYF9ANS1Jj0UpyRdcn3ZyH8Qw5vFe3zKdm35XWlVOotNaDMZTiPfWpVi36+v7nwaUCz+aJ5QTDHr6qEnES8CuIy6qxKE763FEsG0y/pb0zDG74/ixTXA34/kKLGZCNFmwbXwbW5KClOv16Fb1bkWzRmRdj0Wz20kjPOOzRejJ4EV7jWM2p+d+XvbZdSPG3Hvl5JirXDPgGw70CKGpOJFC9MMvmfWYRK8bKk2N0OhvmhLo0nRnCdbnvEdcQC+2zeRHhnUhSrUC+uB/GWIRTT5+JnbLXoDKSoMZlIURGhUlzFcYGKbzdTY2VE5VT68aXFZBMQsl+VeuxEii9MiO/E3ewzao22V6L7w6K6KNWjElnPfgLQEkhRY2QpbhO8OBNK0ShS455NjR1nsUHj+B5Q5Zp3481UcD6hzoWc41VwkTkGE5rfvBXuWKjgTOr+9NsY6aTo0KTX2OzYc7GqRH/JfEaDu5Jy57ncQ5WoO5CixmQjRYPq39QrXnJugwaCJeSNCbkySrd54bLrKHB9ZdEklaLzaFHjXH3WsfDXYKt1wNlDm0qBp1pWwa7z8yTe1BtkAqSoMdlIURbdCilXIRv5mmXhbZMThvtPI7COqDoMHVuKrLKzb4oh5xwLVO9tITNnQt2q94y5YgzDpNZ3bK3sC5CixmQixT/Cn7jIXIrP/eCmhVEnW3E+MJYUn2zFut8ycpdtGmxRYrr/tclUrqcaVPzTogl8uFdAihqTWB5rEkgxQiCZS3HUEvrFj9bIH8tDdbDaC6+ye9jChgzlCyi8yNfJeoQN9xFIUWMgRYGdSnFKXWlTKGZlp3wBRY5Kdzs4lA4yA1LUGEhRYIdSdB+awhqiQeUv8XaGp/cm19+LAtYODwBIUWMgRYGf9vplC1HRrGxe9LCI0zI1/TZ7cXTHexKGa2dhxD2U7VWab4NjmDiUfRBAihoDKSZDGl+6TlloZ5WmJFdVdEd+JeiyqTPX3wuzpu4jxlLMQFcgRY2BFJPxaykOqcW3x4jV0z3qF/huF4HNHqAdkKLGQIrJgBRBGiBFjYEUkwEpgjRAigAAwAEpAgAAB6QIAAAckCIAAHBAigAAwAEpAgAAB6QIAAAckCIAAKwh+h9YhucvZP2JuQAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NCheckState>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NCheckState DisplayName="Check App State 'NetStaff CS'" sap:VirtualizedContainerService.HintSize="2838.4,2239.2" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Timeout="10" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1110.4,1578.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Enter Email and Password and Sign IN" sap:VirtualizedContainerService.HintSize="1048,304.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,182.4" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/#/" CvElementArea="807, 800, 324, 42" CvTextArea="857, 815, 221, 16" CvTextArgument="Sign in with Thomson Reuters Account" CvType="Button" DesignTimeRectangle="809, 801, 321, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Sign in with Thomson Reuters Account' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sign in with Thomson Reuters Account' tag='BUTTON' type='button' class='' check:innerText='Sign in with Thomson Reuters Account' /&gt;" Guid="c7916874-dac5-4b45-9c9a-cbe5d0adf4c6" InformativeScreenshot="04638e2ef0f990995f5da43c6d0475da.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Second Login + OTP Verification" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1048,1183.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="461c8de5-128d-4433-9a25-2f8a25269ba1" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,941.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState DisplayName="Check App State 'Password'" sap:VirtualizedContainerService.HintSize="952,851.2" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Timeout="3" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,608" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Into 'tr.ruchita.patil+422pro…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Text="[strTR_EmailID]" Version="V3">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/login/identifier?state=hKFo2SB3dm5UM2JrdE8tMVZXUFRxN2JSN01ZQ3BaeTVxWFlKcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHp4RmZQd2hJejBqZlNSaXl5d3VQZlVoU3JwTUloMTRTo2NpZNkgeWdhcWpWdnc5N21sSjdmTVRIRjJTbTBRN0tONVdVaFc" CvElementArea="807, 593, 321, 54" CvType="InputBox" DesignTimeRectangle="808, 594, 320, 52" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='input c9396bda3 c1fec96e1' aaname='                               Email                             ' /&gt;" Guid="19d2e5a4-aab9-4857-b4e3-5bbeb9b7b175" InformativeScreenshot="61e5db8719c7ec5bf1af676b180503f3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in to NetStaff CS or NetClient CS | Thomson Reuters' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                  </uix:NTypeInto.Target>
+                                </uix:NTypeInto>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/login/password?state=hKFo2SB5Z2RteHJFNHJlMUcxTDNKWGoyaTVqRWZZRGJzVmR1MqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIFREcy1HU3RzTVpMeTFXUUNFNEFERmZxaDFvZVZ4Sjkyo2NpZNkgb0V5dDREcm9qM21rR0MwUjA0YzJSandkWU91b2tZbzQ" CvElementArea="15, 624, 84, 34" CvTextArea="24, 630, 67, 23" CvTextArgument="Sign in" CvType="Button" DesignTimeRectangle="808, 670, 320, 52" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' innertext='Sign in' visibleinnertext='Sign in' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' innertext='Sign in' visibleinnertext='Sign in' class='c320322a4 c480bc568 c20af198f ce9190a97 _button-login-password' aaname='Sign in' check:text='Sign in' /&gt;" Guid="4519574b-e373-4afe-8474-8de2f85ebce9" InformativeScreenshot="58e16a735b54c3e397655713000a37af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in to CS Professional Suite | Thomson Reuters' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <uix:NCheckState DisplayName="Check App State - CIAM Login" sap:VirtualizedContainerService.HintSize="387.2,77.6" sap2010:WorkflowViewState.IdRef="NCheckState_20" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Timeout="5" Version="V3">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="961.6,2776.8" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - INPUT username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="899.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Text="[str_TRUserName]" Version="V3">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://sso.thomsonreuters.com/as/authorization.oauth2?scope=trmfa+openid+profile+email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Ftrtasso-nonprod.thomson.com%2Fsp%2FeyJpc3MiOiJodHRwczpcL1wvc3NvLnRob21zb25yZXV0ZXJzLmNvbSJ9%2Fcb.openid&amp;state=7UvPUHRCRFrUQyaD5X71StoKRbClQR&amp;nonce=A6C0zDUWPoKOHq74CnHkwC&amp;client_id=dc-RHt8m7k26emZQ9FCOJmNud" CVScreenId="21e2f7ae-019c-4e42-b797-846eb0128e5e" CvElementArea="776, 399, 384, 42" CvType="InputBox" DesignTimeRectangle="778, 400, 380, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="c7d1a687-1c82-4c07-8aa0-e3310059515a" InformativeScreenshot="9b592d94c2400793da3ae13b707dd336.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target CVScreenId="21e2f7ae-019c-4e42-b797-846eb0128e5e" CvTextArea="777, 378, 76, 13" CvTextArgument="USERNAME" CvType="Text" DesignTimeRectangle="778, 378, 74, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' visibleinnertext='USERNAME' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' visibleinnertext='USERNAME' type='' aaname='                             Username                         ' check:text='Username' /&gt;" Guid="7883fdaf-722d-4be3-b805-6198e3314ebe" SearchSteps="Selector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                      </uix:NTypeInto>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - INPUT username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="899.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" SecureText="[ss_TRPassword]" Version="V3">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://sso.thomsonreuters.com/as/authorization.oauth2?scope=trmfa+openid+profile+email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Ftrtasso-nonprod.thomson.com%2Fsp%2FeyJpc3MiOiJodHRwczpcL1wvc3NvLnRob21zb25yZXV0ZXJzLmNvbSJ9%2Fcb.openid&amp;state=7UvPUHRCRFrUQyaD5X71StoKRbClQR&amp;nonce=A6C0zDUWPoKOHq74CnHkwC&amp;client_id=dc-RHt8m7k26emZQ9FCOJmNud" CVScreenId="002c233f-1b27-4929-8ecb-abcd0355c69c" CvElementArea="776, 479, 385, 43" CvType="InputBox" DesignTimeRectangle="778, 481, 380, 40" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='' /&gt;" Guid="545b9916-e1f7-4a42-8b4b-60d941a637ee" InformativeScreenshot="2de487e3460b24a353de2e15bbfd6d68.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                <uix:Target CVScreenId="002c233f-1b27-4929-8ecb-abcd0355c69c" CvTextArea="777, 460, 76, 13" CvTextArgument="PASSWORD" CvType="Text" DesignTimeRectangle="778, 460, 75, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' visibleinnertext='PASSWORD' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' visibleinnertext='PASSWORD' type='' aaname='                             Password                         ' check:text='Password' /&gt;" Guid="bea50521-a753-4767-b61e-4e2e02c3a064" SearchSteps="Selector" />
+                                              </scg:List>
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NTypeInto.Target>
+                                      </uix:NTypeInto>
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Sign On" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="899.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Version="V3">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://sso.thomsonreuters.com/as/authorization.oauth2?scope=trmfa+openid+profile+email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Ftrtasso-nonprod.thomson.com%2Fsp%2FeyJpc3MiOiJodHRwczpcL1wvc3NvLnRob21zb25yZXV0ZXJzLmNvbSJ9%2Fcb.openid&amp;state=aUPPwLd6aT4fdJyqcgbzXtaO1T3SEr&amp;nonce=UR8cJZACGfbK6A7JXuSZjt&amp;client_id=dc-RHt8m7k26emZQ9FCOJmNud" DesignTimeRectangle="907, 633, 102, 45" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl id='signOnButton' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='signOnButton' tag='A' type='' class='ping-button normal allow' aaname='                                 Sign On                                 ' check:innerText='Sign On' /&gt;" Guid="e4200ace-8f7a-4925-87d5-637a5a040dc2" InformativeScreenshot="469a2f9c40bd96093c9f669153bdea02.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                        </uix:NClick.Target>
+                                      </uix:NClick>
+                                      <uix:NCheckState DisplayName="Check App State - PING ID" sap:VirtualizedContainerService.HintSize="899.2,1996" sap2010:WorkflowViewState.IdRef="NCheckState_19" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Timeout="30" Version="V3">
+                                        <uix:NCheckState.IfExists>
+                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1752.8" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;SSO authentication required.&quot;]" />
+                                            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: PingID" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="449.6,1486.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="934f0112-859b-4d56-973b-c43f93761ffa" Version="V2">
+                                              <uix:NApplicationCard.Body>
+                                                <ActivityAction x:TypeArguments="x:Object">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1244.8" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - INPUT username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_18" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" Text="[str_TRUserName]" Version="V3">
+                                                      <uix:NTypeInto.Target>
+                                                        <uix:TargetAnchorable BrowserURL="sso.thomsonreuters.com/as/authorization.oauth2" CVScreenId="4fcf1c18-d505-4c40-ae86-33e34651873d" DesignTimeRectangle="722, 520, 475, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" Guid="55bf4439-3ff3-4e75-816e-23e6b3472a4d" InformativeScreenshot="c06cac7149c1cf98c4b0e2d3636be200.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+                                                          <uix:TargetAnchorable.Anchors>
+                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                              <uix:Target CVScreenId="4fcf1c18-d505-4c40-ae86-33e34651873d" DesignTimeRectangle="722, 493, 93, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' /&gt;" Guid="62607a6f-4232-4205-9f24-11ee38ab7d63" SearchSteps="Selector" />
+                                                            </scg:List>
+                                                          </uix:TargetAnchorable.Anchors>
+                                                        </uix:TargetAnchorable>
+                                                      </uix:NTypeInto.Target>
+                                                    </uix:NTypeInto>
+                                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Enter PIN'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_16" IsPassword="True" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" SecureText="[ssPingId_Pin]" Version="V3">
+                                                      <uix:NTypeInto.Target>
+                                                        <uix:TargetAnchorable BrowserURL="sso.thomsonreuters.com/as/authorization.oauth2" CVScreenId="b3fceec2-b68c-4d4a-8798-74786179b7e0" CvElementArea="720, 622, 478, 53" CvType="InputBox" DesignTimeRectangle="722, 622, 475, 50" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='' /&gt;" Guid="3a5fb5eb-1e3c-475e-99f8-aa9840442327" InformativeScreenshot="9bdb6bf8cd870d8800f0b29153d1e379.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                                          <uix:TargetAnchorable.Anchors>
+                                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                              <uix:Target CVScreenId="b3fceec2-b68c-4d4a-8798-74786179b7e0" CvTextArea="720, 595, 96, 17" CvTextArgument="PASSWORD" CvType="Text" DesignTimeRectangle="722, 595, 94, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='ping-input-label' type='' tag='DIV' aaname='                             Password                         ' check:innerText='PASSWORD' /&gt;" Guid="b652b7c2-bf97-439c-b50c-2b9542119a8b" SearchSteps="FuzzySelector, CV" />
+                                                            </scg:List>
+                                                          </uix:TargetAnchorable.Anchors>
+                                                        </uix:TargetAnchorable>
+                                                      </uix:NTypeInto.Target>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </uix:NTypeInto>
+                                                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,210.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                                                    <ui:LogMessage DisplayName="Log Message - Pin" sap:VirtualizedContainerService.HintSize="353.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Pin entered in the Ping id application&quot;]" />
+                                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'pingid.exe PingID'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" Version="V3">
+                                                      <uix:NClick.Target>
+                                                        <uix:TargetAnchorable BrowserURL="sso.thomsonreuters.com/as/authorization.oauth2" CVScreenId="7614dded-42f0-46ee-9062-cfd996bb202f" CvElementArea="905, 802, 107, 48" CvTextArea="931, 817, 55, 17" CvTextArgument="Sign On" CvType="Button" DesignTimeRectangle="908, 802, 103, 45" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='signOnButton' tag='A' type='' class='ping-button normal allow' aaname='                                 Sign On                                 ' check:innerText='Sign On' /&gt;" Guid="e368ea3b-2bc7-4cec-a8bb-e11eb6031f53" InformativeScreenshot="b65c888b33c3075e625261ae87e3aba5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                                      </uix:NClick.Target>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </uix:NClick>
+                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="353.6,77.6" sap2010:WorkflowViewState.IdRef="CommentOut_15">
+                                                      <ui:CommentOut.Body>
+                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,269.6" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'pingid.exe PingID'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,180.8" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" Version="V3">
+                                                            <uix:NClick.Target>
+                                                              <uix:TargetAnchorable DesignTimeRectangle="250, 300, 66, 43" DesignTimeScaleFactor="1.25" Guid="3ef18156-171d-416a-820f-dca8a3ef82ec" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAArCAYAAADMr156AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI3SURBVGhD7ZWxjsIwDIbvkW7jVZh4EyTeBIknQehmZkZgZmXOtfHvlrR2nFbljlaO9A13Ka392XG+vn9WwVkFFwFcBHARwEUAFwFcBHARwEUAFwFcBBggYheOobOeh7AWn50ftojLCVmfwrazt77fsHcL+3O6NzeyIrYPSvN4kfeJTdg/S577bFQRXO2y5FhGv2vmgiIC8+CxE/YUcITm2hWiiGHdkLI+b8T/t7OG1vWuPFdRd1e73x49WtI8QuGs4X0+hGv1mPRtUQTNhonanAV0guT5IwXFIuiZbuJ8e6XxUfHyQzuXlyACFZjiarSOi1KhKOJZJabGIM0k6zjn9wURI+aDCII13kOVTKtESRpXsiAx28mxKPo73ycCgZpzRniurCOFzs10YJSUeef7jkYMSqlOAn3vtbLx+wWF6HeT1oVUXGkeMRMOy1Sg1PIy/eDHi1CGpnEsakQR9LKB12fnzA4VMU1HVGizw+hwUcSYOdGT9/YZoSeY/p9yseJQRAztCohLgtLOa4pU1fi7amW/LVS+4fUoFM4qVUQNzQpLBhKWzmBmikeUZFiEngB/U9tvOzrmUNDZWRERJCN9lLsma5x/3wmGfytVlDtJLgSSNKrcxlbW1baIBg7gZRWYbmiE0hJbGrAI/puF0MpP/wZ0myWMGSDi7+iKGEf/NsqxXBGxAwu7p2KxItIr1GaZIqzbSmBRIl6H6hAJNR8p4j9wEcBFABcBXARwEcBFABcBXERkFX4BKQ2GFm7T3/MAAAAASUVORK5CYII=" InformativeScreenshot="ec56d3bff2e82a35ffda8c94a934cd1a.png" ScopeSelectorArgument="&lt;wnd app='pingid.exe' cls='GlassWndClass-GlassWindowClass-*' title='PingID' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                                                                <uix:TargetAnchorable.Anchors>
+                                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                                    <uix:Target CVScreenId="8992894a-260e-4f56-8b8b-243530f44ed1" CvElementArea="26, 284, 167, 68" CvTextArea="66, 307, 85, 22" CvTextArgument="Refresh" CvType="Button" DesignTimeRectangle="26, 284, 168, 69" ElementType="Button" Guid="b4dce61c-d50f-4c4f-8d6e-04e861e15226" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                                                  </scg:List>
+                                                                </uix:TargetAnchorable.Anchors>
+                                                              </uix:TargetAnchorable>
+                                                            </uix:NClick.Target>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </uix:NClick>
+                                                        </Sequence>
+                                                      </ui:CommentOut.Body>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:CommentOut>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </uix:NApplicationCard.Body>
+                                              <uix:NApplicationCard.TargetApp>
+                                                <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="1a5b0b832828717fb61ee23aa2410ab5.jpg" Selector="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" Url="https://sso.thomsonreuters.com/as/authorization.oauth2?scope=trmfa+openid+profile+email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Ftrtasso.thomson.com%2Fsp%2FeyJpc3MiOiJodHRwczpcL1wvc3NvLnRob21zb25yZXV0ZXJzLmNvbSJ9%2Fcb.openid&amp;state=mzrIPpmSeuV69R2aS9YcNbHyNgzkJa&amp;nonce=5OY8xTiaXJYffvrVB8zXQl&amp;client_id=dc-sx9StZPCnrCCtUc6VIOU1d" />
+                                              </uix:NApplicationCard.TargetApp>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uix:NApplicationCard>
+                                          </Sequence>
+                                        </uix:NCheckState.IfExists>
+                                        <uix:NCheckState.IfNotExists>
+                                          <ui:LogMessage sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Bypass the SSO authentication becuase of the User is already authenticated.&quot;]" />
+                                        </uix:NCheckState.IfNotExists>
+                                        <uix:NCheckState.Target>
+                                          <uix:TargetAnchorable BrowserURL="sso.thomsonreuters.com/as/authorization.oauth2" CVScreenId="66496726-fc0b-4042-b788-115bd2ac1304" CvTextArea="716, 402, 484, 47" CvTextArgument="Enterprise Single Sign-On" CvType="Text" DesignTimeRectangle="716, 402, 484, 47" DesignTimeScaleFactor="1.25" ElementType="Text" Guid="debb11cb-8a84-4821-87fc-b01a1c79828c" InformativeScreenshot="ab0a0572422caf8ffda5336b202de20c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive" />
+                                        </uix:NCheckState.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NCheckState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <ui:LogMessage sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;SSO authentication not mandatory.&quot;]" />
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="721, 498, 475, 50" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="910b51ac-7ea4-416a-ab69-b31b105bf65f" InformativeScreenshot="8a123270939014d2205accc3d8fd59a2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                  </uix:NCheckState.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheckState>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/login/identifier?state=hKFo2SB3dm5UM2JrdE8tMVZXUFRxN2JSN01ZQ3BaeTVxWFlKcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHp4RmZQd2hJejBqZlNSaXl5d3VQZlVoU3JwTUloMTRTo2NpZNkgeWdhcWpWdnc5N21sSjdmTVRIRjJTbTBRN0tONVdVaFc" DesignTimeRectangle="808, 469, 320, 64" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='c75a821d8 cf4ccfc47' aaname='Sign in to NetStaff CS or NetClient CS' check:innerText='Sign in to NetStaff CS or NetClient CS' /&gt;" Guid="d6594abe-38b8-49e7-8ac8-cecb763bff92" InformativeScreenshot="3ccc2622a96ca2c806fb90048bf48d5e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in to NetStaff CS or NetClient CS | Thomson Reuters' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVYSURBVFhHzdd3yPdVGcfxp9Tc5jZ35h45SkQUVzmy3KPMValouBLcezdAxRXOFNwLN1FpQWKJq6A0/1AQUSERERQcheP9+vn96v24Hh4x6MCb+/c98zqf6zrXOfe0z1reOWV6/udlymLfiO/EF+IHscvwe+tYOz4/g8bJYrc4KGaJ4+LmmD0YsHPMEbfGUTFrHBK7xswbMw6KBWL+sOiV8aeYL+aNRWNqXywc2r4cf47L4othDkz6zbAMHS3wu7grFoxFYqnQZlJ/l4wt4kvBJduHNt/LBoPw27g7FooZF51iiXgw7o9xtySnxgGxTWwa14RFbol7Yvm4No4NcfGVeCD+GovFxxcNA9+MHYKUdgwTads7No41Y8VgzDyhzcJfi1XjmWCQxdeP1YNa3LdjrBOT9d4vQ4Wd/i3eir2GOpD3R8ENJhnrBds+A9RZNyy2Riwdv4w346TQX7+346GY3h0+QvDcFs+GI2WHZGPxRjH2s4ufhUlMRt5N4t/BZebR79R4JY4ZvrntuaAOhadbfM6wGBXIqY58d8bEdzGeiN3jxKCAc89AO749zonvxcVBOYpQRkxsGOa2BvdYczIxWQ14Mg5UGSYXXOvFbGFX18VmoV2k7xvygxzA2K8Ov/V7Jy4KfS8fvv8Qc4Uc8VT8OubRgZWk0en3MXf8Io6PMQAZIQAdL4sJtr/HvSFwnw6JSl8KMGLzoNjBwa3mFLR/DGsJ1lUMYJWAeTREurMsoxmonZQ7Db8t/lIcEeT/ehi/XawcPwxKmOPIuGH45iJHm0I/DmudGXOaFKKYK+zYhPw99fiNu+M7AegoTsZOiSPjTgltDKCCnVNrhZAPqEAVQciNk4Ey2NVhV+Q3yR3BoLGzfsvE2TFJTFPL0A473GD4u3isFuq5+Z9xbognCl8V22h0fPjk9dg2XC6ilt8dHXFBQgbxLyM/UtSFhR1hEc6AX8Wolm/13Ck/WPM5Dc8PH6+FBQSKBbUJMIq4D7hJ7n/v+HyoqAtu0MccZGe8HGHs6eGGpPgbMQlEgwTZpcHP5L4kngjy8aVgY71JnISJAZhahjruOT8EnhhiiL9kd10fHYw8NKy5xTiQdK5fsotOV68jJ4m8GL8J/cgptb6vwlAPfpZHGGtRfpYntNkIF9qE39bye9LISsHxWOwXotMky8VKcX38NAx04ewx/HXOGSLKLX54vByC0LxiaUzhjqS4Mofb9PE4K+YaLZ+aiLjhvBCcspZB/CaHbxnG2KlEQiHXsHNtHgu6KbnKCdKXGu6DE0IAfyQRUcCCrJJe+UiG0+nCMIE73reUTTqLfCv0dXOKH24033fDC0qbvoxycdmIdmr+K9wbc6uAjjqRXkaT8SQcF42TQIELQoR7arl4ZDYXjEeq8bKpB6qd87d5zSenUIoB3KXOPfNeDCh+hOzn6UR651/dySE/nDF8G+ilJPfb2T/ivhBUh8XoIogRxtkYFT10XogxyX1QfIQHx8PxnxBo6lxIr8ZpIe+7HR1Pp4HkHhnfj1FeyBlSNtdw01jvUfPf8H7Q54PiY8AiW4VgcQp8rxXSsFzuGvWbEU6IMc6461sQ2rHE482gzc6dGHOJtfGNMFnvY8vQ6A3nuiW35GIBSeTnwYdkvzGodlNwB7f9JKihv3n0fSQoS5UZF52Cr/nK0eNfE9mFySFlexVLXHY8uaDCjsddW5DUnnmy4PSyf1LRaUCgyAmi2s3lnw11gnWymw9BNW34S1wRjDXHeKPOXBkHhYeoHMEYCcWOHKM9g79lRIpJOPrsH6J+5hf9pDJOFgJTdJOaYXKE39+OTw+w/78ybdq7OwulYjs4ajEAAAAASUVORK5CYII=" InformativeScreenshot="3d0b47e22bf3965037e898aac71e59c3.jpg" Selector="&lt;html app='chrome.exe' title='Sign in to NetStaff CS or NetClient CS | Thomson Reuters' /&gt;" Url="https://auth.thomsonreuters.com/u/login/identifier?state=hKFo2SB3dm5UM2JrdE8tMVZXUFRxN2JSN01ZQ3BaeTVxWFlKcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHp4RmZQd2hJejBqZlNSaXl5d3VQZlVoU3JwTUloMTRTo2NpZNkgeWdhcWpWdnc5N21sSjdmTVRIRjJTbTBRN0tONVdVaFc" />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1675.2,1996" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1612.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: NetStaff CS &gt; Home &gt; Dashboard" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="f079174f-300d-4a0b-a8e3-0a1c616dc1b5" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,440" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheckState DisplayName="Check App State 'NetStaff CS'" sap:VirtualizedContainerService.HintSize="952,324.8" sap2010:WorkflowViewState.IdRef="NCheckState_12" ScopeIdentifier="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Version="V3">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/go.html#/home/dashboard" CvTextArea="52, 271, 108, 18" CvTextArgument="NetStaff CS" CvType="Text" DesignTimeRectangle="14, 263, 313, 38" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='wsd-has-med-icon' aaname='' check:innerText='NetStaff CS' /&gt;" Guid="37f0712a-6457-4bc2-8b2a-7032c8659f26" InformativeScreenshot="b0a7918c23f14c5ab1ba988782a2978d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NetStaff CS &amp;gt; Home &amp;gt; Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CvTextArea="340, 271, 55, 18" CvTextArgument="Home" CvType="Text" DesignTimeRectangle="334, 263, 1590, 38" ElementType="Container" FullSelectorArgument="&lt;webctrl parentid='homeDashboard' tag='HEADER' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='homeDashboard' tag='HEADER' type='' class='wsd-bar' aaname='                       ' check:innerText='Home' /&gt;" Guid="2beca0c0-0e6d-4777-a9c5-586437ef0fc1" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NCheckState.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheckState>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="944ff01cb0ebcab8ec13def94ceff715.jpg" Selector="&lt;html app='chrome.exe' title='NetStaff CS &amp;gt; Home &amp;gt; Dashboard' /&gt;" Url="https://secure.netlinksolution.com/nextgen/go.html#/home/dashboard" />
+                          </uix:NApplicationCard.TargetApp>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NApplicationCard>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <uix:NCheckState DisplayName="Check App State 'Sign in'" sap:VirtualizedContainerService.HintSize="1612.8,1848.8" sap2010:WorkflowViewState.IdRef="NCheckState_17" ScopeIdentifier="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Timeout="5" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1110.4,1605.6" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1048,189.6" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0ed1f8c2-772d-4779-a8ef-f4b711ecc9dd" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/#/" CvElementArea="808, 611, 323, 42" CvTextArea="857, 626, 223, 16" CvTextArgument="Sign in with Thomson Reuters Account" CvType="Button" DesignTimeRectangle="809, 613, 321, 39" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='' aaname='Sign in with Thomson Reuters Account' check:innerText='Sign in with Thomson Reuters Account' /&gt;" Guid="5ce42a49-fd45-4b14-8107-e16ce1a44ddc" InformativeScreenshot="20f21b3ab418bddd9ae81622f662fd2b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="904, 519, 128, 32" CvTextArgument="SurePrep" CvType="Text" DesignTimeRectangle="809, 515, 321, 35" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='NetfirmLogin-form--item NetfirmLogin-brand--title' aaname='SurePrep' check:innerText='SurePrep' /&gt;" Guid="d1e34049-1499-4101-a403-e3cd5d5e098c" SearchSteps="Selector, FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" ContinueOnError="True" DisplayName="Second Login + OTP Verification" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1048,1325.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="461c8de5-128d-4433-9a25-2f8a25269ba1" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,1084" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NCheckState DisplayName="Check App State 'Password'" sap:VirtualizedContainerService.HintSize="952,993.6" sap2010:WorkflowViewState.IdRef="NCheckState_16" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Timeout="4" Version="V3">
+                                  <uix:NCheckState.IfExists>
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,750.4" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Into 'tr.ruchita.patil+422pro…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Text="[UserName]" Version="V3">
+                                        <uix:NTypeInto.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/login/identifier?state=hKFo2SB3dm5UM2JrdE8tMVZXUFRxN2JSN01ZQ3BaeTVxWFlKcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHp4RmZQd2hJejBqZlNSaXl5d3VQZlVoU3JwTUloMTRTo2NpZNkgeWdhcWpWdnc5N21sSjdmTVRIRjJTbTBRN0tONVdVaFc" CvElementArea="807, 593, 321, 54" CvType="InputBox" DesignTimeRectangle="808, 594, 320, 52" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='input c9396bda3 c1fec96e1' aaname='                               Email                             ' /&gt;" Guid="19d2e5a4-aab9-4857-b4e3-5bbeb9b7b175" InformativeScreenshot="61e5db8719c7ec5bf1af676b180503f3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in to NetStaff CS or NetClient CS | Thomson Reuters' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                        </uix:NTypeInto.Target>
+                                      </uix:NTypeInto>
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Version="V3">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/login/password?state=hKFo2SB5Z2RteHJFNHJlMUcxTDNKWGoyaTVqRWZZRGJzVmR1MqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIFREcy1HU3RzTVpMeTFXUUNFNEFERmZxaDFvZVZ4Sjkyo2NpZNkgb0V5dDREcm9qM21rR0MwUjA0YzJSandkWU91b2tZbzQ" CvElementArea="15, 624, 84, 34" CvTextArea="24, 630, 67, 23" CvTextArgument="Sign in" CvType="Button" DesignTimeRectangle="808, 670, 320, 52" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' innertext='Sign in' visibleinnertext='Sign in' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' innertext='Sign in' visibleinnertext='Sign in' class='c320322a4 c480bc568 c20af198f ce9190a97 _button-login-password' aaname='Sign in' check:text='Sign in' /&gt;" Guid="4519574b-e373-4afe-8474-8de2f85ebce9" InformativeScreenshot="58e16a735b54c3e397655713000a37af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in to CS Professional Suite | Thomson Reuters' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                                        </uix:NClick.Target>
+                                      </uix:NClick>
+                                      <uix:NCheckState DisplayName="Check App State - CIAM Login" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="NCheckState_22" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Timeout="5" Version="V3">
+                                        <uix:NCheckState.IfExists>
+                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="547.2,1045.6" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - INPUT username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484.8,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_19" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Text="[str_TRUserName]" Version="V3">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://sso.thomsonreuters.com/as/authorization.oauth2?scope=trmfa+openid+profile+email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Ftrtasso-nonprod.thomson.com%2Fsp%2FeyJpc3MiOiJodHRwczpcL1wvc3NvLnRob21zb25yZXV0ZXJzLmNvbSJ9%2Fcb.openid&amp;state=7UvPUHRCRFrUQyaD5X71StoKRbClQR&amp;nonce=A6C0zDUWPoKOHq74CnHkwC&amp;client_id=dc-RHt8m7k26emZQ9FCOJmNud" CVScreenId="21e2f7ae-019c-4e42-b797-846eb0128e5e" CvElementArea="776, 399, 384, 42" CvType="InputBox" DesignTimeRectangle="778, 400, 380, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="c7d1a687-1c82-4c07-8aa0-e3310059515a" InformativeScreenshot="9b592d94c2400793da3ae13b707dd336.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                                  <uix:TargetAnchorable.Anchors>
+                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                      <uix:Target CVScreenId="21e2f7ae-019c-4e42-b797-846eb0128e5e" CvTextArea="777, 378, 76, 13" CvTextArgument="USERNAME" CvType="Text" DesignTimeRectangle="778, 378, 74, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' visibleinnertext='USERNAME' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' visibleinnertext='USERNAME' type='' aaname='                             Username                         ' check:text='Username' /&gt;" Guid="7883fdaf-722d-4be3-b805-6198e3314ebe" SearchSteps="Selector" />
+                                                    </scg:List>
+                                                  </uix:TargetAnchorable.Anchors>
+                                                </uix:TargetAnchorable>
+                                              </uix:NTypeInto.Target>
+                                            </uix:NTypeInto>
+                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - INPUT username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484.8,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_20" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" SecureText="[ss_TRPassword]" Version="V3">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://sso.thomsonreuters.com/as/authorization.oauth2?scope=trmfa+openid+profile+email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Ftrtasso-nonprod.thomson.com%2Fsp%2FeyJpc3MiOiJodHRwczpcL1wvc3NvLnRob21zb25yZXV0ZXJzLmNvbSJ9%2Fcb.openid&amp;state=7UvPUHRCRFrUQyaD5X71StoKRbClQR&amp;nonce=A6C0zDUWPoKOHq74CnHkwC&amp;client_id=dc-RHt8m7k26emZQ9FCOJmNud" CVScreenId="002c233f-1b27-4929-8ecb-abcd0355c69c" CvElementArea="776, 479, 385, 43" CvType="InputBox" DesignTimeRectangle="778, 481, 380, 40" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='' /&gt;" Guid="545b9916-e1f7-4a42-8b4b-60d941a637ee" InformativeScreenshot="2de487e3460b24a353de2e15bbfd6d68.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                                  <uix:TargetAnchorable.Anchors>
+                                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                      <uix:Target CVScreenId="002c233f-1b27-4929-8ecb-abcd0355c69c" CvTextArea="777, 460, 76, 13" CvTextArgument="PASSWORD" CvType="Text" DesignTimeRectangle="778, 460, 75, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' visibleinnertext='PASSWORD' /&gt;" FuzzySelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' visibleinnertext='PASSWORD' type='' aaname='                             Password                         ' check:text='Password' /&gt;" Guid="bea50521-a753-4767-b61e-4e2e02c3a064" SearchSteps="Selector" />
+                                                    </scg:List>
+                                                  </uix:TargetAnchorable.Anchors>
+                                                </uix:TargetAnchorable>
+                                              </uix:NTypeInto.Target>
+                                            </uix:NTypeInto>
+                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Sign On" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484.8,189.6" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Version="V3">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://sso.thomsonreuters.com/as/authorization.oauth2?scope=trmfa+openid+profile+email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Ftrtasso-nonprod.thomson.com%2Fsp%2FeyJpc3MiOiJodHRwczpcL1wvc3NvLnRob21zb25yZXV0ZXJzLmNvbSJ9%2Fcb.openid&amp;state=aUPPwLd6aT4fdJyqcgbzXtaO1T3SEr&amp;nonce=UR8cJZACGfbK6A7JXuSZjt&amp;client_id=dc-RHt8m7k26emZQ9FCOJmNud" DesignTimeRectangle="907, 633, 102, 45" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl id='signOnButton' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='signOnButton' tag='A' type='' class='ping-button normal allow' aaname='                                 Sign On                                 ' check:innerText='Sign On' /&gt;" Guid="e4200ace-8f7a-4925-87d5-637a5a040dc2" InformativeScreenshot="469a2f9c40bd96093c9f669153bdea02.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                            </uix:NClick>
+                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,266.4" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                                              <ui:CommentOut.Body>
+                                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NCheckState DisplayName="Check App State - PING ID" sap:VirtualizedContainerService.HintSize="387.2,76" sap2010:WorkflowViewState.IdRef="NCheckState_21" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Timeout="30" Version="V3">
+                                                    <uix:NCheckState.IfExists>
+                                                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1752.8" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;SSO authentication required.&quot;]" />
+                                                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: PingID" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="449.6,1486.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="934f0112-859b-4d56-973b-c43f93761ffa" Version="V2">
+                                                          <uix:NApplicationCard.Body>
+                                                            <ActivityAction x:TypeArguments="x:Object">
+                                                              <ActivityAction.Argument>
+                                                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                              </ActivityAction.Argument>
+                                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1244.8" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - INPUT username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_21" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" Text="[str_TRUserName]" Version="V3">
+                                                                  <uix:NTypeInto.Target>
+                                                                    <uix:TargetAnchorable BrowserURL="sso.thomsonreuters.com/as/authorization.oauth2" CVScreenId="4fcf1c18-d505-4c40-ae86-33e34651873d" DesignTimeRectangle="722, 520, 475, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" Guid="55bf4439-3ff3-4e75-816e-23e6b3472a4d" InformativeScreenshot="c06cac7149c1cf98c4b0e2d3636be200.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
+                                                                      <uix:TargetAnchorable.Anchors>
+                                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                                          <uix:Target CVScreenId="4fcf1c18-d505-4c40-ae86-33e34651873d" DesignTimeRectangle="722, 493, 93, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl class='ping-input-label' tag='DIV' /&gt;" Guid="62607a6f-4232-4205-9f24-11ee38ab7d63" SearchSteps="Selector" />
+                                                                        </scg:List>
+                                                                      </uix:TargetAnchorable.Anchors>
+                                                                    </uix:TargetAnchorable>
+                                                                  </uix:NTypeInto.Target>
+                                                                </uix:NTypeInto>
+                                                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Enter PIN'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_22" IsPassword="True" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" SecureText="[ssPingId_Pin]" Version="V3">
+                                                                  <uix:NTypeInto.Target>
+                                                                    <uix:TargetAnchorable BrowserURL="sso.thomsonreuters.com/as/authorization.oauth2" CVScreenId="b3fceec2-b68c-4d4a-8798-74786179b7e0" CvElementArea="720, 622, 478, 53" CvType="InputBox" DesignTimeRectangle="722, 622, 475, 50" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='' /&gt;" Guid="3a5fb5eb-1e3c-475e-99f8-aa9840442327" InformativeScreenshot="9bdb6bf8cd870d8800f0b29153d1e379.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
+                                                                      <uix:TargetAnchorable.Anchors>
+                                                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                                          <uix:Target CVScreenId="b3fceec2-b68c-4d4a-8798-74786179b7e0" CvTextArea="720, 595, 96, 17" CvTextArgument="PASSWORD" CvType="Text" DesignTimeRectangle="722, 595, 94, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='ping-input-label' type='' tag='DIV' aaname='                             Password                         ' check:innerText='PASSWORD' /&gt;" Guid="b652b7c2-bf97-439c-b50c-2b9542119a8b" SearchSteps="FuzzySelector, CV" />
+                                                                        </scg:List>
+                                                                      </uix:TargetAnchorable.Anchors>
+                                                                    </uix:TargetAnchorable>
+                                                                  </uix:NTypeInto.Target>
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </uix:NTypeInto>
+                                                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,210.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                                                                <ui:LogMessage DisplayName="Log Message - Pin" sap:VirtualizedContainerService.HintSize="353.6,176" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Pin entered in the Ping id application&quot;]" />
+                                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'pingid.exe PingID'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" Version="V3">
+                                                                  <uix:NClick.Target>
+                                                                    <uix:TargetAnchorable BrowserURL="sso.thomsonreuters.com/as/authorization.oauth2" CVScreenId="7614dded-42f0-46ee-9062-cfd996bb202f" CvElementArea="905, 802, 107, 48" CvTextArea="931, 817, 55, 17" CvTextArgument="Sign On" CvType="Button" DesignTimeRectangle="908, 802, 103, 45" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='signOnButton' tag='A' type='' class='ping-button normal allow' aaname='                                 Sign On                                 ' check:innerText='Sign On' /&gt;" Guid="e368ea3b-2bc7-4cec-a8bb-e11eb6031f53" InformativeScreenshot="b65c888b33c3075e625261ae87e3aba5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive" />
+                                                                  </uix:NClick.Target>
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </uix:NClick>
+                                                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="353.6,77.6" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+                                                                  <ui:CommentOut.Body>
+                                                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,269.6" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'pingid.exe PingID'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,180.8" sap2010:WorkflowViewState.IdRef="NClick_23" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="934f0112-859b-4d56-973b-c43f93761ffa" Version="V3">
+                                                                        <uix:NClick.Target>
+                                                                          <uix:TargetAnchorable DesignTimeRectangle="250, 300, 66, 43" DesignTimeScaleFactor="1.25" Guid="3ef18156-171d-416a-820f-dca8a3ef82ec" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAArCAYAAADMr156AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI3SURBVGhD7ZWxjsIwDIbvkW7jVZh4EyTeBIknQehmZkZgZmXOtfHvlrR2nFbljlaO9A13Ka392XG+vn9WwVkFFwFcBHARwEUAFwFcBHARwEUAFwFcBBggYheOobOeh7AWn50ftojLCVmfwrazt77fsHcL+3O6NzeyIrYPSvN4kfeJTdg/S577bFQRXO2y5FhGv2vmgiIC8+CxE/YUcITm2hWiiGHdkLI+b8T/t7OG1vWuPFdRd1e73x49WtI8QuGs4X0+hGv1mPRtUQTNhonanAV0guT5IwXFIuiZbuJ8e6XxUfHyQzuXlyACFZjiarSOi1KhKOJZJabGIM0k6zjn9wURI+aDCII13kOVTKtESRpXsiAx28mxKPo73ycCgZpzRniurCOFzs10YJSUeef7jkYMSqlOAn3vtbLx+wWF6HeT1oVUXGkeMRMOy1Sg1PIy/eDHi1CGpnEsakQR9LKB12fnzA4VMU1HVGizw+hwUcSYOdGT9/YZoSeY/p9yseJQRAztCohLgtLOa4pU1fi7amW/LVS+4fUoFM4qVUQNzQpLBhKWzmBmikeUZFiEngB/U9tvOzrmUNDZWRERJCN9lLsma5x/3wmGfytVlDtJLgSSNKrcxlbW1baIBg7gZRWYbmiE0hJbGrAI/puF0MpP/wZ0myWMGSDi7+iKGEf/NsqxXBGxAwu7p2KxItIr1GaZIqzbSmBRIl6H6hAJNR8p4j9wEcBFABcBXARwEcBFABcBXERkFX4BKQ2GFm7T3/MAAAAASUVORK5CYII=" InformativeScreenshot="ec56d3bff2e82a35ffda8c94a934cd1a.png" ScopeSelectorArgument="&lt;wnd app='pingid.exe' cls='GlassWndClass-GlassWindowClass-*' title='PingID' /&gt;" SearchSteps="Image" TargetType="ImageBased" Version="V2" Visibility="Interactive">
+                                                                            <uix:TargetAnchorable.Anchors>
+                                                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                                                <uix:Target CVScreenId="8992894a-260e-4f56-8b8b-243530f44ed1" CvElementArea="26, 284, 167, 68" CvTextArea="66, 307, 85, 22" CvTextArgument="Refresh" CvType="Button" DesignTimeRectangle="26, 284, 168, 69" ElementType="Button" Guid="b4dce61c-d50f-4c4f-8d6e-04e861e15226" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                                                              </scg:List>
+                                                                            </uix:TargetAnchorable.Anchors>
+                                                                          </uix:TargetAnchorable>
+                                                                        </uix:NClick.Target>
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                      </uix:NClick>
+                                                                    </Sequence>
+                                                                  </ui:CommentOut.Body>
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </ui:CommentOut>
+                                                              </Sequence>
+                                                            </ActivityAction>
+                                                          </uix:NApplicationCard.Body>
+                                                          <uix:NApplicationCard.TargetApp>
+                                                            <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="1a5b0b832828717fb61ee23aa2410ab5.jpg" Selector="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" Url="https://sso.thomsonreuters.com/as/authorization.oauth2?scope=trmfa+openid+profile+email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Ftrtasso.thomson.com%2Fsp%2FeyJpc3MiOiJodHRwczpcL1wvc3NvLnRob21zb25yZXV0ZXJzLmNvbSJ9%2Fcb.openid&amp;state=mzrIPpmSeuV69R2aS9YcNbHyNgzkJa&amp;nonce=5OY8xTiaXJYffvrVB8zXQl&amp;client_id=dc-sx9StZPCnrCCtUc6VIOU1d" />
+                                                          </uix:NApplicationCard.TargetApp>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </uix:NApplicationCard>
+                                                      </Sequence>
+                                                    </uix:NCheckState.IfExists>
+                                                    <uix:NCheckState.IfNotExists>
+                                                      <ui:LogMessage sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;Bypass the SSO authentication becuase of the User is already authenticated.&quot;]" />
+                                                    </uix:NCheckState.IfNotExists>
+                                                    <uix:NCheckState.Target>
+                                                      <uix:TargetAnchorable BrowserURL="sso.thomsonreuters.com/as/authorization.oauth2" CVScreenId="66496726-fc0b-4042-b788-115bd2ac1304" CvTextArea="716, 402, 484, 47" CvTextArgument="Enterprise Single Sign-On" CvType="Text" DesignTimeRectangle="716, 402, 484, 47" DesignTimeScaleFactor="1.25" ElementType="Text" Guid="debb11cb-8a84-4821-87fc-b01a1c79828c" InformativeScreenshot="ab0a0572422caf8ffda5336b202de20c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V5" Visibility="Interactive" />
+                                                    </uix:NCheckState.Target>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </uix:NCheckState>
+                                                </Sequence>
+                                              </ui:CommentOut.Body>
+                                            </ui:CommentOut>
+                                          </Sequence>
+                                        </uix:NCheckState.IfExists>
+                                        <uix:NCheckState.IfNotExists>
+                                          <ui:LogMessage sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;SSO authentication not mandatory.&quot;]" />
+                                        </uix:NCheckState.IfNotExists>
+                                        <uix:NCheckState.Target>
+                                          <uix:TargetAnchorable DesignTimeRectangle="721, 498, 475, 50" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl id='username' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="910b51ac-7ea4-416a-ab69-b31b105bf65f" InformativeScreenshot="8a123270939014d2205accc3d8fd59a2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enterprise Single Sign-On' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                        </uix:NCheckState.Target>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NCheckState>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,330.4" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Password" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Text="[Password]" Version="V3">
+                                              <uix:NTypeInto.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/login/password?state=hKFo2SB3dm5UM2JrdE8tMVZXUFRxN2JSN01ZQ3BaeTVxWFlKcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHp4RmZQd2hJejBqZlNSaXl5d3VQZlVoU3JwTUloMTRTo2NpZNkgeWdhcWpWdnc5N21sSjdmTVRIRjJTbTBRN0tONVdVaFc" CvElementArea="806, 605, 323, 56" CvType="InputBox" DesignTimeRectangle="809, 607, 274, 52" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='input c9396bda3 c6d2c7838' aaname='                         Password                       ' /&gt;" Guid="bc8bc56f-07a3-4730-ad6b-d26597ad778f" InformativeScreenshot="c188f7a949b667441162ffbd2c7e6ce4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in to NetStaff CS or NetClient CS | Thomson Reuters' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                              </uix:NTypeInto.Target>
+                                            </uix:NTypeInto>
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="387.2,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,269.6" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Version="V3">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/login/password?state=hKFo2SB5Z2RteHJFNHJlMUcxTDNKWGoyaTVqRWZZRGJzVmR1MqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIFREcy1HU3RzTVpMeTFXUUNFNEFERmZxaDFvZVZ4Sjkyo2NpZNkgb0V5dDREcm9qM21rR0MwUjA0YzJSandkWU91b2tZbzQ" CvElementArea="15, 624, 84, 34" CvTextArea="24, 630, 67, 23" CvTextArgument="Sign in" CvType="Button" DesignTimeRectangle="808, 670, 320, 52" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='submit' innertext='Sign in' visibleinnertext='Sign in' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' innertext='Sign in' visibleinnertext='Sign in' class='c320322a4 c480bc568 c20af198f ce9190a97 _button-login-password' aaname='Sign in' check:text='Sign in' /&gt;" Guid="4519574b-e373-4afe-8474-8de2f85ebce9" InformativeScreenshot="58e16a735b54c3e397655713000a37af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in to CS Professional Suite | Thomson Reuters' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                            </uix:NClick>
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="387.2,49.6" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NCheckState DisplayName="Check App State 'Verify Your Identity'" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_15" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Timeout="20" Version="V3">
+                                              <uix:NCheckState.IfExists>
+                                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450.4,903.2" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                                  <Sequence.Variables>
+                                                    <Variable x:TypeArguments="x:String" Name="Code" />
+                                                  </Sequence.Variables>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="388,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter 6 digit Mobile Authentication Number" Title="Verification Code">
+                                                    <ui:InputDialog.Result>
+                                                      <OutArgument x:TypeArguments="x:String">[Code]</OutArgument>
+                                                    </ui:InputDialog.Result>
+                                                  </ui:InputDialog>
+                                                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[string.IsNullOrEmpty(Code)]" DisplayName="While" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                                                    <ui:InterruptibleWhile.Body>
+                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                                                      </Sequence>
+                                                    </ui:InterruptibleWhile.Body>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:InterruptibleWhile>
+                                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT code'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Text="[Code]" Version="V3">
+                                                    <uix:NTypeInto.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/mfa-sms-challenge?state=hKFo2SA1c0Nvb1B1dW5GLU81SXFZTTFpaW5zaUw5cjgtdkNwOaFusG1mYS1hdXRoZW50aWNhdGWjdGlk2SB6eEZmUHdoSXowamZTUml5eXd1UGZVaFNycE1JaDE0U6NjaWTZIHlnYXFqVnZ3OTdtbEo3Zk1USEYyU20wUTdLTjVXVWhX" CvElementArea="806, 581, 324, 56" CvType="InputBox" DesignTimeRectangle="808, 583, 320, 52" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='code' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='code' tag='INPUT' type='text' class='input c9396bda3 cad781f43' aaname='                           Enter the 6-digit code                         ' /&gt;" Guid="f7094793-bea0-49da-a26e-9b498db5d88b" InformativeScreenshot="376c065ea9394986506829845b214ba3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enter your phone code to log in | NetStaff CS or NetClient CS' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                                    </uix:NTypeInto.Target>
+                                                  </uix:NTypeInto>
+                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="461c8de5-128d-4433-9a25-2f8a25269ba1" Version="V3">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/mfa-sms-challenge?state=hKFo2SA1c0Nvb1B1dW5GLU81SXFZTTFpaW5zaUw5cjgtdkNwOaFusG1mYS1hdXRoZW50aWNhdGWjdGlk2SB6eEZmUHdoSXowamZTUml5eXd1UGZVaFNycE1JaDE0U6NjaWTZIHlnYXFqVnZ3OTdtbEo3Zk1USEYyU20wUTdLTjVXVWhX" CvElementArea="805, 656, 325, 57" CvTextArea="933, 677, 70, 15" CvTextArgument="Continue" CvType="Button" DesignTimeRectangle="808, 659, 320, 52" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='cea93c1fe cb2dfcee4 cb8f247a6 c5d1e7708 ca287526d' aaname='Continue' check:innerText='Continue' /&gt;" Guid="85f02195-2cf3-489d-94a7-e7bfc3c26026" InformativeScreenshot="33aa7d902430cfa15c06983e916a968d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enter your phone code to log in | NetStaff CS or NetClient CS' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                                    </uix:NClick.Target>
+                                                  </uix:NClick>
+                                                </Sequence>
+                                              </uix:NCheckState.IfExists>
+                                              <uix:NCheckState.IfNotExists>
+                                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </Sequence>
+                                              </uix:NCheckState.IfNotExists>
+                                              <uix:NCheckState.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/mfa-sms-challenge?state=hKFo2SA1c0Nvb1B1dW5GLU81SXFZTTFpaW5zaUw5cjgtdkNwOaFusG1mYS1hdXRoZW50aWNhdGWjdGlk2SB6eEZmUHdoSXowamZTUml5eXd1UGZVaFNycE1JaDE0U6NjaWTZIHlnYXFqVnZ3OTdtbEo3Zk1USEYyU20wUTdLTjVXVWhX" CvTextArea="873, 432, 189, 23" CvTextArgument="Verify Your Identity" CvType="Text" DesignTimeRectangle="808, 426, 320, 32" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='c75a821d8 cf4ccfc47' aaname='Verify Your Identity' check:innerText='Verify Your Identity' /&gt;" Guid="6de4ab4a-d408-47d7-98ff-37a3bf4b0ed1" InformativeScreenshot="6358d550f94415265de52c2c7a52ea63.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Enter your phone code to log in | NetStaff CS or NetClient CS' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                              </uix:NCheckState.Target>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uix:NCheckState>
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                    </Sequence>
+                                  </uix:NCheckState.IfExists>
+                                  <uix:NCheckState.IfNotExists>
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </uix:NCheckState.IfNotExists>
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://auth.thomsonreuters.com/u/login/identifier?state=hKFo2SB3dm5UM2JrdE8tMVZXUFRxN2JSN01ZQ3BaeTVxWFlKcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHp4RmZQd2hJejBqZlNSaXl5d3VQZlVoU3JwTUloMTRTo2NpZNkgeWdhcWpWdnc5N21sSjdmTVRIRjJTbTBRN0tONVdVaFc" DesignTimeRectangle="808, 469, 320, 64" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='c75a821d8 cf4ccfc47' aaname='Sign in to NetStaff CS or NetClient CS' check:innerText='Sign in to NetStaff CS or NetClient CS' /&gt;" Guid="d6594abe-38b8-49e7-8ac8-cecb763bff92" InformativeScreenshot="3ccc2622a96ca2c806fb90048bf48d5e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in to NetStaff CS or NetClient CS | Thomson Reuters' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                  </uix:NCheckState.Target>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NCheckState>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVYSURBVFhHzdd3yPdVGcfxp9Tc5jZ35h45SkQUVzmy3KPMValouBLcezdAxRXOFNwLN1FpQWKJq6A0/1AQUSERERQcheP9+vn96v24Hh4x6MCb+/c98zqf6zrXOfe0z1reOWV6/udlymLfiO/EF+IHscvwe+tYOz4/g8bJYrc4KGaJ4+LmmD0YsHPMEbfGUTFrHBK7xswbMw6KBWL+sOiV8aeYL+aNRWNqXywc2r4cf47L4othDkz6zbAMHS3wu7grFoxFYqnQZlJ/l4wt4kvBJduHNt/LBoPw27g7FooZF51iiXgw7o9xtySnxgGxTWwa14RFbol7Yvm4No4NcfGVeCD+GovFxxcNA9+MHYKUdgwTads7No41Y8VgzDyhzcJfi1XjmWCQxdeP1YNa3LdjrBOT9d4vQ4Wd/i3eir2GOpD3R8ENJhnrBds+A9RZNyy2Riwdv4w346TQX7+346GY3h0+QvDcFs+GI2WHZGPxRjH2s4ufhUlMRt5N4t/BZebR79R4JY4ZvrntuaAOhadbfM6wGBXIqY58d8bEdzGeiN3jxKCAc89AO749zonvxcVBOYpQRkxsGOa2BvdYczIxWQ14Mg5UGSYXXOvFbGFX18VmoV2k7xvygxzA2K8Ov/V7Jy4KfS8fvv8Qc4Uc8VT8OubRgZWk0en3MXf8Io6PMQAZIQAdL4sJtr/HvSFwnw6JSl8KMGLzoNjBwa3mFLR/DGsJ1lUMYJWAeTREurMsoxmonZQ7Db8t/lIcEeT/ehi/XawcPwxKmOPIuGH45iJHm0I/DmudGXOaFKKYK+zYhPw99fiNu+M7AegoTsZOiSPjTgltDKCCnVNrhZAPqEAVQciNk4Ey2NVhV+Q3yR3BoLGzfsvE2TFJTFPL0A473GD4u3isFuq5+Z9xbognCl8V22h0fPjk9dg2XC6ilt8dHXFBQgbxLyM/UtSFhR1hEc6AX8Wolm/13Ck/WPM5Dc8PH6+FBQSKBbUJMIq4D7hJ7n/v+HyoqAtu0MccZGe8HGHs6eGGpPgbMQlEgwTZpcHP5L4kngjy8aVgY71JnISJAZhahjruOT8EnhhiiL9kd10fHYw8NKy5xTiQdK5fsotOV68jJ4m8GL8J/cgptb6vwlAPfpZHGGtRfpYntNkIF9qE39bye9LISsHxWOwXotMky8VKcX38NAx04ewx/HXOGSLKLX54vByC0LxiaUzhjqS4Mofb9PE4K+YaLZ+aiLjhvBCcspZB/CaHbxnG2KlEQiHXsHNtHgu6KbnKCdKXGu6DE0IAfyQRUcCCrJJe+UiG0+nCMIE73reUTTqLfCv0dXOKH24033fDC0qbvoxycdmIdmr+K9wbc6uAjjqRXkaT8SQcF42TQIELQoR7arl4ZDYXjEeq8bKpB6qd87d5zSenUIoB3KXOPfNeDCh+hOzn6UR651/dySE/nDF8G+ilJPfb2T/ivhBUh8XoIogRxtkYFT10XogxyX1QfIQHx8PxnxBo6lxIr8ZpIe+7HR1Pp4HkHhnfj1FeyBlSNtdw01jvUfPf8H7Q54PiY8AiW4VgcQp8rxXSsFzuGvWbEU6IMc6461sQ2rHE482gzc6dGHOJtfGNMFnvY8vQ6A3nuiW35GIBSeTnwYdkvzGodlNwB7f9JKihv3n0fSQoS5UZF52Cr/nK0eNfE9mFySFlexVLXHY8uaDCjsddW5DUnnmy4PSyf1LRaUCgyAmi2s3lnw11gnWymw9BNW34S1wRjDXHeKPOXBkHhYeoHMEYCcWOHKM9g79lRIpJOPrsH6J+5hf9pDJOFgJTdJOaYXKE39+OTw+w/78ybdq7OwulYjs4ajEAAAAASUVORK5CYII=" InformativeScreenshot="3d0b47e22bf3965037e898aac71e59c3.jpg" Selector="&lt;html app='chrome.exe' title='Sign in to NetStaff CS or NetClient CS | Thomson Reuters' /&gt;" Url="https://auth.thomsonreuters.com/u/login/identifier?state=hKFo2SB3dm5UM2JrdE8tMVZXUFRxN2JSN01ZQ3BaeTVxWFlKcqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHp4RmZQd2hJejBqZlNSaXl5d3VQZlVoU3JwTUloMTRTo2NpZNkgeWdhcWpWdnc5N21sSjdmTVRIRjJTbTBRN0tONVdVaFc" />
+                          </uix:NApplicationCard.TargetApp>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NApplicationCard>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/#/" CvElementArea="808, 611, 323, 42" CvTextArea="857, 626, 223, 16" CvTextArgument="Sign in with Thomson Reuters Account" CvType="Button" DesignTimeRectangle="809, 613, 321, 39" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='' aaname='Sign in with Thomson Reuters Account' check:innerText='Sign in with Thomson Reuters Account' /&gt;" Guid="a1786ba7-2aa9-4fc0-b532-240be350e967" InformativeScreenshot="c0ac1eb922b01ee5affd7480c1480e95.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/#/" CvElementArea="802, 392, 332, 54" CvType="InputBox" DesignTimeRectangle="805, 395, 327, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='userLogin' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='userLogin' tag='INPUT' type='text' class='' aaname='NetStaff CS or NetClient CS login' /&gt;" Guid="aa964a19-d154-4008-b226-250adf6f38be" InformativeScreenshot="ee5da230b75ae6d4488ce39b353af8dc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="803, 367, 229, 17" CvTextArgument="NetStaff CS or NetClient CS login" CvType="Text" DesignTimeRectangle="804, 364, 329, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='' check:innerText='NetStaff CS or NetClient CS login' /&gt;" Guid="9764c071-9e5a-487b-9ffd-ec7eaf7a73ae" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAU0AAAAaCAYAAAAzDA4/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAlaSURBVHhe7ZvvhyNJGMfvT8urZmlCWLYNG8fGsjEvwhKW4WiWiWVjmFgulpXlzDKynAzHcC4MYekXK8vIsjKsDEcYmiOE556qeqq6Ol350cns3e54PpSZVHV3VT/1PN+uH90/AcMwDLMxLJoMwzA5YNFkGIbJAYsmwzBMDlg0GYZhcsCiyTAMkwMWTYZhmBwY0ZycVqFQKGCqwslXyiRM2aMTmFDeVsxjGJ01oPbAB0/WVQCvGEDlWQu6HyYwo8O2Jb48gXrJU9d92IHRkjwXk4sOhLUAfC9pV+3FOYz/UeXxZQ8aVnnB8yF4XIfWaQSTXRu+gugl1VdswCCmTMKUHQ4oZzdW2cBV1+T3GvajB9X3O3nF1og+aT2rQOkete1eCX2pDdE0Kc/TZ7dtT80sakGAbSgdRTv7OPP/4xBNTE9QHOdUgGwjmi4HHL8pUx0e+A8CCPYC4/D+8ZCOmkD3icqrvMsTjMl5ItiDZz3MceUtEmNbS/KYbDqAcyFUXzpQpjx5HWx3QEJcKLZgaNnqtjF2xOSjLW3dzB/ky2y73gbZumI4r1Pe0x6QTu3OhybViw+JFXYVPqkfvOkUQPsSD9iiz76VaA5f+SvrZX4s3KKJqfLbmEqssp1EcwydPZV38Ed6yDSbjmB4pfO2Fc0ImqI+TA3j8668NNM/6hR8JTj4LYJxTGOB+QwmVxOI0cnHbwJ5jcLBufxtmE1h9GmcErLbxhbNQsGH8CKp7bZEcxMbOOv6ewCdow4Mrun3bbCJaH5qQUke40Hl6BxG10l746uxfOBv02ffSjQhHkHv1zb0Lr+lpzD/FUtFs1CowMnVQpktmvMJDI5rZqToPQyhS06RDnSR8FpfEwGrvE0EOU0S1ElSwTO77kMnrCWjBQyYMk7FBn8vOe/wzJG3GAzJeeXXyybu1v086sB4WSA7iC+7ED4uKUHCqWE57MLIxI22B9rmogv1It6XI1gztvRDM013Bbms82da/sA6q8cDmMo2L7NtThtYdbnyJhctqOk+uleG8HRkBMr40WEfxmchlIXviDa+HqpjjGAmyfXgjF6q63vhgiBabNNnrvuB+VT6eSD6R9RZqkFrYI+rYxi+1nGAIo727h2mr5OJn+suVMVvtH//Sw/Ch+LaOPvab8PQ+AfzvZIVzUcNaOjgwk4WDpcVTQy0fXKixyE0X9Tlmk2hUIMe+tPw12TaLdaZgr069HA00H9OwSSSCJawDd2LEQW1YAq9X9JrasFeCyJRjtOtwORZ61R7GBTyPBIncUwJj3n1lyMvUtVo5gNoyHKa0i1h1g/NdZRzh9A+HcBo1ZzUGg3JpQgKumSKpkXTB9+na9vBSphAPsB+Kar//edqmr4Y5LOoqer0Aqi/aKJgqzrV0scS2842s4FLUBbzJu9pynyvAuFRA+oPVP21M2Uo40dFvGfx1yQfWh/xgI/t1EOxhP1c/31RNCdw8kiddyDXTtxs02fZe5zCeZ3aI/048Sd9T8koXfmY8XuRtF2WiibagfpUp2SZivlecYgmCuXXE+pUNU3PdDoKgnT6YlMJGqKnQ9VT5eSuIIN4CG0K5FTyKhg0ZjxiRj6pUQY+8SdX1jL6JQaYPL8KXTk93GJ6bpxXjIQpz4kYTVSsINQJRxavaJSUIlnv849IqOdDaFGAqIBL2ubto83FrZmHR4Jtx3jQILFR0/S0jZM6a+9JGf7pQyiPx36SGQ7bbmgDV3+m8/T9+dDUzyZ60BWedKXfGD/yqmoWM0cbkE1Me9ZOz9f0qSFvnznuUfs5Dga6ckaDInlWU8f4+PBDUe3uq3OSfk7uSV9nuWh6UH2nZl3REa17moEJ873iFE3p4O/oNwZT+LySLtPH+mJE0YQmpsY+dTo5iivINNPPEfTe4khET13ltYQTCpaIJjL51IMO1dc8rJJD62B3BdOaADMjzdLKUZZhOoLorAMNe8dWj5JSYL00orPrNTZ5KQIsaVt4ocpdpO0Yw+CQ7IzT9PDALkuuF9TJRkd12gzRNnLYdkMbuPozlWeNnirhYh8pAcyIh6s9a0Vzs5GmYeM+y97j9P1iexFzn+Jh7favxessF83kQZW1DfO9slQ0xZrlCTm0SVRmjnUlchRXkDkxI8YVgY0MXy3b3d1BNK26ghXreU7mI2jTxtaiuMt6V4imtyCa7rYpMnaMUeQWpnSqLLleNq2y7WY2cPVnKs8IgSvdpmiKemm2IjZ5KG8jVvZZ9h43Ek3qZ/vBN9h4TZNF80dkuWgKrGl6qgwdW44QrU0JAzm6K8jiLxGMptYUW2BEk17vwRqygZ04p9l5x7ZV5Hm7iCYGhlmT8qH+JjLvZZqdY/H/zRiiz1OY2UFsBWB2xJNvep5LNJFkmm6XWXaz3nyQmHa7bLuZDdaKppiWyj5K7/BLqP7bEs1kvbgA5ZfniU/J3fOJWiO/ydtnjns003MUyMXpuVybtl670rv01z2ok6/q67Bo3i1WiyYi8s0UWpeJHVfaCBI7pGLToSl2touecUbzyodc0G/j1HsG/ZCuI/MCCKyX3Es4+lJnWseJl5F/Ee8AjuHkZ8p7WMepXwhVvbGyo2gKgVv3juLsz9DkyQ0leyPqfhOibPwlmzL6HN3e+4sbQflFM9NmKotRcMzm036IdqIlkPtteqnfZVvBehuk+vOw7xTSxFfEmw0N2U/yQwYaEWZ9zCGaeh0Uk7Bb2zGNFqT8MpXUMsM2fZa9R8vPhb3MRpAHddoISmyuUwlK9+l/Fs07yVrRTAmkXSZeOXpdhwoJn3BM+WXPR9qEiCNo0asvXjGE/k0M435XfsGR3iGtQeNsaO2gI1+72a94rvSrGaKuGrQ/4G95jV1FU5H5Ggbvp/aiJ18Rir/0oXuM92rtnuryId2ui9QrR+JrFfHK0Q0V7iSaCNq3uRCcAv0VjFy/k4Feg/BtHyZ69OiyLbHKBrI/tf2fqo8EXG2bXLRRqOkaYsdZfoEjtkxcPuYQTSHgx2V1PrY//NOhbsTiF0HijQDxRZB4DW2rPnPcY/qVI/EmRA1aFyYKJNOBspu41zaWDRwPE/mbRfNOYESTYZgtSS0BTKH7VIlm7nVy5oeARZNhdkLNGDKfanpV6NIokrlbsGgyzC7cRNARS056zVosidQa/MnkHYZFk2EYJgcsmgzDMDlg0WQYhskBiybDMEwOWDQZhmE2BuBf/0SExkxWxIQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="184ead7586029df3b452398369781c68.jpg" Selector="&lt;html app='chrome.exe' title='Login' /&gt;" Url="https://secure.netlinksolution.com/nextgen/#/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Select Tax Software Application to open" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="2934.4,846.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8c8b1982-48de-42b9-a2af-a75b704513af" Timeout="800" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,606.4" sap2010:WorkflowViewState.IdRef="Sequence_30">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'UltraTax CS 2023'" sap:VirtualizedContainerService.HintSize="952,516" sap2010:WorkflowViewState.IdRef="NCheckState_10" ScopeIdentifier="8c8b1982-48de-42b9-a2af-a75b704513af" Timeout="60" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DisplayName="Click 'UltraTax CS 2023'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="387.2,182.4" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8c8b1982-48de-42b9-a2af-a75b704513af" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/go.html#/home/dashboard" DesignTimeRectangle="704, 284, 85, 100" DesignTimeScaleFactor="1" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='UltraTax+CS+{0}' tag='SPAN' /&gt;&quot;, TaxYear)]" FuzzySelectorArgument="&lt;webctrl id='UltraTax+CS+2023' tag='SPAN' type='' class='sortable-application' aaname='                                   ' check:innerText='UltraTax CS 2023' /&gt;" Guid="63222da7-8d99-4268-a3b3-b5a7572403a0" ImageBase64="" InformativeScreenshot="cb6220620b43ef6bcec94de7e7abc612.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NetStaff CS &amp;gt; Home &amp;gt; Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://secure.netlinksolution.com/nextgen/go.html#/home/dashboard" DesignTimeRectangle="704, 284, 85, 100" DesignTimeScaleFactor="1" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='UltraTax+CS+{0}' tag='SPAN' /&gt;&quot;, TaxYear)]" FuzzySelectorArgument="&lt;webctrl id='UltraTax+CS+2023' tag='SPAN' type='' class='sortable-application' aaname='                                   ' check:innerText='UltraTax CS 2023' /&gt;" Guid="6770e16c-ec67-474c-b41a-488ea9ea71c3" ImageBase64="" InformativeScreenshot="336fd11331629e84f0d284b682b78fc5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NetStaff CS &amp;gt; Home &amp;gt; Dashboard' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="53ec8773085dbc09974401e83581ab19.jpg" Selector="&lt;html app='chrome.exe' title='NetStaff CS &amp;gt; Home &amp;gt; Dashboard' /&gt;" Url="https://secure.netlinksolution.com/nextgen/go.html#/home/dashboard" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

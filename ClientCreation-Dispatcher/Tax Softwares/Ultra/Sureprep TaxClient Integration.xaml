@@ -1,0 +1,1103 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sureprep_TaxClient_Integration" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ClientID" Type="InArgument(x:String)" />
+    <x:Property Name="in_transactionItem" Type="InArgument(ui:QueueItem)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1408.8,4368</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Sureprep_TaxClient_Integration_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>TR_Aut_Dispatcher.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sureprep_TaxClient_Integration" sap:VirtualizedContainerService.HintSize="869.6,4303.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="Count" />
+      <Variable x:TypeArguments="x:Boolean" Name="Unckecked" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[in_TransactionItem.SpecificContent(&quot;ServiceType&quot;).ToString.Contains(&quot;Outsource Offshore&quot;)]" sap:VirtualizedContainerService.HintSize="807.2,4214.4" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="773.6,3713.6" sap2010:WorkflowViewState.IdRef="Sequence_48">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="711.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigating to Ultra Tax application for tax file back up&quot;]" />
+          <Sequence DisplayName="Tax File Backup" sap:VirtualizedContainerService.HintSize="711.2,3450.4" sap2010:WorkflowViewState.IdRef="Sequence_53">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: 2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" sap:VirtualizedContainerService.HintSize="648.8,3338.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_16" OpenMode="Never" ScopeGuid="dd7afcea-9fed-431c-b96e-e39ca7b6fc11" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="615.2,2984" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="552.8,210.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][d(alt)]f[u(alt)][u(hk)][d(hk)]e[u(hk)][d(hk)]f[u(hk)]" Version="V3" />
+                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Send to File Location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" sap:VirtualizedContainerService.HintSize="552.8,2402.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_15" OpenMode="Never" ScopeGuid="850cad45-8557-4c5a-a9a9-a6e73c5f650f" Version="V2">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="519.2,2079.2" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Send to'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="456.8,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="850cad45-8557-4c5a-a9a9-a6e73c5f650f" Text="[in_ClientID]" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="0, 0, 871, 702" DesignTimeScaleFactor="1.25" FriendlyName="'Send to'" Guid="d000bc03-4518-4663-99d4-e44ad2fc7613" InformativeScreenshot="bf9ef99a002963053135d4332b628960.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='Send to File Location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <Literal x:TypeArguments="x:String" Value="" />
+                                    </InArgument>
+                                  </uix:TargetAnchorable.FuzzySelectorArgument>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="2" DisplayName="Click 'Select-&gt;'" sap:VirtualizedContainerService.HintSize="456.8,56.8" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="850cad45-8557-4c5a-a9a9-a6e73c5f650f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="333, 357, 92, 28" CvTextArea="351, 363, 52, 15" CvTextArgument="Select-&gt;" CvType="Button" DesignTimeRectangle="333, 357, 92, 28" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Select-&gt;'" Guid="a85fcc38-f3ea-4cf2-8014-127ad12fd99d" InformativeScreenshot="989b4ea693f73a832467296f411321ab.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='Send to File Location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DisplayName="Click 'Modify Destination...'" sap:VirtualizedContainerService.HintSize="456.8,56.8" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="850cad45-8557-4c5a-a9a9-a6e73c5f650f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="667, 481, 165, 28" CvTextArea="682, 487, 127, 17" CvTextArgument="Modify Destination..." CvType="Button" DesignTimeRectangle="667, 481, 165, 28" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Modify Destination...'" Guid="69232f05-6751-4383-acff-18d08c9dca73" InformativeScreenshot="0e040b69364b52abed2bfdd98f83c3f3.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='Send to File Location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Send to location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" sap:VirtualizedContainerService.HintSize="456.8,846.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_14" OpenMode="Never" ScopeGuid="2adc2e62-082e-4410-87aa-958c00d73f6d" Version="V2">
+                              <uix:NApplicationCard.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,523.2" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Folder'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="2adc2e62-082e-4410-87aa-958c00d73f6d" Text="V:\UTVO" Version="V3">
+                                      <uix:NTypeInto.Target>
+                                        <uix:TargetAnchorable CvElementArea="215, 505, 703, 31" CvType="InputBox" DesignTimeRectangle="215, 505, 703, 31" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Folder'" Guid="817bb6cc-3401-4078-b990-fa6fc9c21470" InformativeScreenshot="038f8641aad05a85e49e9f6fc2821675.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='Send to location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CvTextArea="162, 513, 46, 15" CvTextArgument="Folder:" CvType="Text" DesignTimeRectangle="162, 513, 46, 15" ElementType="Text" FriendlyName="'Folder'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NTypeInto.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NTypeInto>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="8" DisplayName="Click 'Select Folder'" sap:VirtualizedContainerService.HintSize="353.6,182.4" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2adc2e62-082e-4410-87aa-958c00d73f6d" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable CvElementArea="660, 542, 135, 33" CvTextArea="683, 550, 86, 15" CvTextArgument="Select Folder" CvType="Button" DesignTimeRectangle="660, 542, 135, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Select Folder'" Guid="05a3d9e6-b367-4da0-b730-777a14ed5130" InformativeScreenshot="4e6270720a6c8944ed840859c4bde4d5.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='Send to location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CvElementArea="809, 542, 110, 33" CvType="Button" DesignTimeRectangle="809, 542, 110, 33" ElementType="Button" FriendlyName="'msrdc.exe Send'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </ActivityAction>
+                              </uix:NApplicationCard.Body>
+                              <uix:NApplicationCard.TargetApp>
+                                <uix:TargetApp Area="526, 194, 960, 600" FilePath="C:\Users\6124805\AppData\Local\Programs\Remote Desktop\msrdc.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAICSURBVDhPYwCB/uOP/+fvuP0/e9tNMEZmY+At1+AYrLlo153/9gvP/+duO/CfoWEXAtftQMWVG1Ewb93m/zrVC/4zWM8/h6kZ2QCg4tlnHv0/8+TDf+Wunf8ZytYisHvGfwbTWacwNaLZduj+m/8goNMHlIdpLliKZgAOZ0YuO/3/4ZtPYAP6D976bzERqBakGYSdkoAGzDiKoRFkA8i5Tz98BWv8/OM3mH779SeY7txz5T9DxkyoAVMPwjUh4503X/y//erjf/G6tf8P3X0J1qjTvvF/846LYLZRx3okA5A1g5wGpEGaV114+J8hbyHcAN3Glf+FSpf8n3Hw2n+LTqABDnFAAyYghSzMb0BNC0/dBWuad/wW2DAQABkAdnraVAi2jYIaANMI1QzCIJtAmr/9gvgfBECBufD4jf+mratwGAAyHWQAiIZi5szp/88/eg02YPPF+//ffvkOZodN3wI1oBMYgEgaQFi2EuJPmE2Hbj4GawKnvKQJYJdsu3T/P4NVGJoBUL/x580CawA5F5cBa8/cghgADhioRjgGKpq08wxY04bzd/7ffvkezO7cchJumGMT0KtmAVADotvAmtBxxoJd/8/cfwHWAAKghAUy2KJmNjgK1b1jITlSPRiYprXsIFjNEgOv2Lr7/91HT/+ruYX+Z1AxA2N1R1+gZgYGACaQg8odQ2QqAAAAAElFTkSuQmCC" InformativeScreenshot="9aaaec44cb25d1b00dd820c1e9639b7b.png" Selector="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='Send to location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" Title="Send to location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" />
+                              </uix:NApplicationCard.TargetApp>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NApplicationCard>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="False" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="456.8,189.6" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="850cad45-8557-4c5a-a9a9-a6e73c5f650f" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="653, 649, 93, 28" CvTextArea="688, 657, 20, 13" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="653, 649, 93, 28" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'OK'" Guid="742f2a96-19bf-46b5-9073-f5fd3725d12a" InformativeScreenshot="f0e7a85126caf3b8023cbc79fa68ed10.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='Send to File Location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvElementArea="758, 649, 93, 28" CvType="Button" DesignTimeRectangle="758, 649, 93, 28" ElementType="Button" FriendlyName="'msrdc.exe Send'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
+                            <uix:NApplicationCard AttachMode="ByInstance" ContinueOnError="True" DisplayName="Use Application: &quot;Send to&quot; file saved (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" sap:VirtualizedContainerService.HintSize="456.8,588.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_17" ScopeGuid="8255ec3a-290f-4f28-9810-21f55a5b9403" Timeout="10" Version="V2">
+                              <uix:NApplicationCard.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,272.8" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DelayBefore="10" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="353.6,182.4" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8255ec3a-290f-4f28-9810-21f55a5b9403" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable CvElementArea="220, 161, 93, 28" CvTextArea="256, 168, 21, 13" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="220, 161, 93, 28" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'OK'" Guid="e9120efc-da58-4a2e-af93-279c1b505f18" InformativeScreenshot="bcb434e9071c4057894a1c049f57aa32.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='&amp;quot;Send to&amp;quot; file saved (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CvTextArea="10, 11, 130, 15" CvTextArgument="&quot;Send to&quot; file saved" CvType="Text" DesignTimeRectangle="10, 11, 130, 15" ElementType="Text" FriendlyName="'&quot;Send to&quot; file saved'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </ActivityAction>
+                              </uix:NApplicationCard.Body>
+                              <uix:NApplicationCard.TargetApp>
+                                <uix:TargetApp Area="797, 403, 328, 206" FilePath="C:\Users\6124805\AppData\Local\Programs\Remote Desktop\msrdc.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVySURBVFhH5Vhpb1RVGO4/kCaC/0Al0BKppPDFFRRoWMqiibggWghdxIiBDwoGbKLGxAQpRT6ZaFLU4AIlcYsS5YOixKWd0p2WtqOtttOd0Jm59/i8733vOmdm7m2xfvBJnpl773mXZ+695z3vmYL/BZRSi8AS8AHhcnChDM8/kJwEVSvTbDTTqXEc62Gkx2BzDkdV4L8vGEmKlWF8iKRpyh8JppmC7wc4KpJwNw8IWgieQhKTctmY+bNfJb44o+InjqqelytU9/7HmHQcr39VJb48o2YGB8RaYMU4CRZK+LkBgVbhMcYpNsFMpVTiq49V177tqunh20Oxa98j8PmEfW0gJilfKWlmBwTYokwjyRGBiR+/VW07H9SKCMO2navVxKULEg0wjRl8lku6aIAjxJkGx0nOqIFjh7VJZ8P48Vc4JsPKEU0kHFbZd864PqW6DzyhTRSWzesXq+Z1i33Xrh58kmMzrDtZKulzA4aF9jtHv3Ku4tp3rVHJobi6MdCrWh+/1zdGIu07iZz9+FogMrIDRqfYAxg4dsgXMCrbn12rksNDEk2xyNjmu3w28bojMso4ITL0gEGxXUpoQngDRWV7xXqVSvxNoVzgdWt7ek2G7cRP38k4v49LRU4muAiTHcrBXGZre8U6lRr5i0K5wO+myaGzJ9FOCTKM0yLHDwwtQhC2ogKrCxSGHZWbVGo8QWEcmEZa9b95QGtvk+qkZcwaMpdFXKxhA6DruW3aIPnYWV2u0hNjEsWCmU6rvtf3a+29pGLuQZXIcgHljTRCy5cuQD7ShEhPZvYNfW/kF2eTZjsDDYbIcmF3JbS26py9pNlN62/T2juca71Hqzm2F3T3Wrbe7fPNRXq1GIYxKrIs4NJt1oiyEmucbQ69f1wslRr+7D1XJL7pPIippksqtnFZRhwd4/W14sW4VeSxQGo2GT2HdmudiR27y8TKxcj5Br/IxgYZcTH56w8qtqE4I16QPYf3iAejROSxwPuta4rbJZ0zsXlDkZpu+10sXYx8/hHE3WnZQSSdBzF5+SL7B2N6Sbk9uE/khRdIbNlSoqav/CLWLqgFc9ZbiKXzILj42z9Ew+4Xd4glwyfQfcS4zTpnL2m5mopdFg8Xo9+cdUTSN537gIXiyvbSjHg2A494uchjgbTHYFAnrHMOMrZpGU+AIEYvnOfuhWxYJM4ZOVYSm3+czDJJCCgJXGHDlBmb9LhplQii77UXHBsSO/juW1yGvL46Zi0zBLtQU7HUOetIy1cQyeFB1brjHq19TmJyeQr1WZHlApedSkvLjjaIh9dqa7gQe0ENQvuuh7T2+dj1/KMShVEpslzgotssYAbqgtjsPVLp2wARqLWiLkZnH4aJrz+1AmVrFgiyb5V2a7U2UM9Lz7j7CUFqbER17CnT2ochdd3O0zCMBpGTCQwX4RdYDSt2X8FALdtWKHPmBg07SI+Pqo69GzNso3Di5++tYFbDukTk6AGDd9gYGHjbv5NrLluirnfGZBTi0L10VpX7bKKS1n4P6kRGdsCINk38dwA9StrYeAPSXZxu/Y3vXGfNVt9YVF49+BReJ9l2G8Y1fN4iMnIDhitlK8hbw6BIKgl0N33XIpLEebad9N6skPThAIdyeSf4TuZbBaKQHqtz56wcmyVtNMARIq07SaDdl25XFpY0W50JQbBiz06cDQQolU01g0oQbXDCFHObVISpznkLO4778BXtsWYDAi0A6+0SZIOWJlo/qRPmv9/QLhGtv99queA7y5cN65HWgeEmRBQg6FLMttNI4l9GwoB8UIRxlLvO3QwgyUKwCknP2V2QFuhKYENN4V7Q3z7NJ5CcBNMf59SZE+n4vxM0fygo+AeilLdRyg7xkwAAAABJRU5ErkJggg==" InformativeScreenshot="202a8025634e405dce3877482e03ee3b.png" Selector="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='&amp;quot;Send to&amp;quot; file saved (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" Title="&quot;Send to&quot; file saved (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" />
+                              </uix:NApplicationCard.TargetApp>
+                            </uix:NApplicationCard>
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="525, 155, 871, 702" FilePath="C:\Users\6124805\AppData\Local\Programs\Remote Desktop\msrdc.exe" IconBase64="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" InformativeScreenshot="901af17db93e11acca8a4b12008f9075.png" Selector="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='Send to File Location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" Title="Send to File Location (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" />
+                      </uix:NApplicationCard.TargetApp>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NApplicationCard>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DelayAfter="0.4" DisplayName="Keyboard Shortcuts '2023 UltraTax'" sap:VirtualizedContainerService.HintSize="552.8,56.8" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" ScopeIdentifier="dd7afcea-9fed-431c-b96e-e39ca7b6fc11" Shortcuts="[d(hk)][d(ctrl)]s[u(ctrl)][u(hk)]" Version="V3">
+                      <uix:NKeyboardShortcuts.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1920, 1020" DesignTimeScaleFactor="1.25" FriendlyName="'2023 UltraTax'" Guid="6cde7747-86bc-4f32-9aa1-a0978d0d6421" InformativeScreenshot="5594da01364de6e9b72f3c28fb172ccf.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='2023 UltraTax CS  / 1040 [BGSD Anderson, Jack] - [Input Screen  *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.FuzzySelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </uix:TargetAnchorable.FuzzySelectorArgument>
+                        </uix:TargetAnchorable>
+                      </uix:NKeyboardShortcuts.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DelayAfter="0.4" DisplayName="Keyboard Shortcuts '2023 UltraTax'" sap:VirtualizedContainerService.HintSize="552.8,224" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" ScopeIdentifier="dd7afcea-9fed-431c-b96e-e39ca7b6fc11" Shortcuts="[d(hk)][d(ctrl)]j[u(ctrl)][u(hk)]" Version="V3">
+                      <uix:NKeyboardShortcuts.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1920, 1020" DesignTimeScaleFactor="1.25" FriendlyName="'2023 UltraTax'" Guid="11239d12-4475-40e4-8250-3101ff0063c0" InformativeScreenshot="e172b875a82df155fc4cd811d8f362e6.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='2023 UltraTax CS  / 1040 [BGSD Anderson, Jack] - [Input Screen  *' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.FuzzySelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </uix:TargetAnchorable.FuzzySelectorArgument>
+                        </uix:TargetAnchorable>
+                      </uix:NKeyboardShortcuts.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NKeyboardShortcuts>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="0, 0, 1920, 1020" FilePath="C:\Program Files\Remote Desktop\msrdc.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARbSURBVFhHlZdZSJRRFMe/h3oQgl56iKCHCDQiCISiiEKiECIjiKCJaIOaFlotjWrQlMpCrabNrGRsM6V0Whmzsk0y20RKKVu1QoSJop0eTvfce84391vHDvw5M/fq/f3P+c4334zBUf86DsX3u2BNrNNTK6++6JOC0TZYefGZYw21ub4Djj98B4RVgeBAbTsM298MA4pug7HtelL1y4tZZGy9ql5vvmBd31Qr9zDj+5QtdTCq9BqMPXBLmTjZ1gPTq9okuF+BO0yXfrgEMFgXmiDpBlhyfUMNrDrRAMaCaIes3A8uQZRZDLZU7iIdjFBdgxcVgpEReeJZvQ5k2cGyIpEzKlrktS1rUZIt9oFLTVulDCBcN8AwL9nhmHNj7aDHgqoH3mDUutNgTF1KBvKvWQC63GCOLFqdc+ExoVUETrd4g4X6rz1BBkTrkhlwNUHXl6+1awcEUII4E5jlbgAPpNcM1F9j1g1wZfYOoAEd7ib/DpARO1AH4/0cvvcKnvd8Jaw1vvz8AzWt7yG9+IoTHiwDY/IiMqABZbbJYkKA8cMEJ/5/ovLRWwtcZocBmxjMFbOizz/SsSriP347uvCoKy47oAeaMOFmB8rv/Rc8q+IuHQfw889fCJxsksPluAsit2Dg+ohjfVJxVMG9DLhBdWEVHHg4tzU3+pBWVaABBuGccIQbn3kbkBAPuGybyHfe9NJRABnhetOAWwcQgnvp28/RKkB9e7eCL96rGcg97wDaxSDdwLLqZnPd0YFj4kHDlQrhnYBGUkNnFBzXJ83zN8CH69LbicPHlSYzYEL1zAb6CkelFtbK4dMDjbyPf6N3KkwDDLTDTQPiOiYDG6srVRb/jDmrrEFC/QINVbV0wpLKGzA0uzwB1SUNHBEt9KkY4VIElxWI93iL7Yi1wpveL4T0j8YXH2B0nngQLSxJiDtgh7IYZoG7aEhOJVQ0dRDKPwKHLicMjJ/tbgAPNYFkwFeinfYhxNZnltZBSeyxZWbw9YBgWHwVK7YawIOSwQdlR+SthBq6SezhdcQ9kXPONRFCRaBMPMapUpyB+PdftCP2Dl50GnDAXYSTzYEDZg6TnwEECWEnOAqj98GYt5MM7LnsC9WFn+McWJFpQIAcBrhKlIDtuNRMO6C+DesG3GCmEEA5ZflhyxMuVCcqoTZ7GhAgvOadPZ9pByBzd3UfDWhwlh109GYrpOef8jSQHopAY0cXrYI0IuFswPJ49IDqSgnuhzsvrd8HMPQhw2jr7nV8RuAdMGGbGF6Ezw5RB0rEU5ABPmBuNQpbGm54Ssf2LR68/gTj8iKJ6rPWw+Apc8HA1smDvaCcWTxYQsM3lsuJxsPdAtfxEmUWVSXAWDlVv7ygVP0+HLlil3Qk/0CH6WIw/o09C+WebSSsCjkDtGfMKVAZwfhraMwMSJs6y/oLeeO+CkjLmg/GyIlKIyb4K3WcJS8NFUHnu25T04PZas+mtMkzYU1+EcEN4x+dQxI3PmW5bwAAAABJRU5ErkJggg==" InformativeScreenshot="620774d38d415dfca60cfc0b940556c2.png" Selector="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" Title="2023 UltraTax CS  [Office: &lt;default&gt;] - \\Remote, 256-bit SSL/TL*" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </Sequence>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="574.4,339.2" sap2010:WorkflowViewState.IdRef="Sequence_49">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigating to Ultra Tax application for tax file integration&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: 2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" sap:VirtualizedContainerService.HintSize="512,76" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="dd7afcea-9fed-431c-b96e-e39ca7b6fc11" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594.4,2868.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="2" DisplayName="Click 'Utilities'" sap:VirtualizedContainerService.HintSize="532,189.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd7afcea-9fed-431c-b96e-e39ca7b6fc11" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable CvTextArea="138, 32, 50, 15" CvTextArgument="Utilities" CvType="Text" DesignTimeRectangle="138, 32, 50, 15" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Utilities'" Guid="18e562ac-5f73-4b32-a196-c6fd616f7883" InformativeScreenshot="e66d6225688fddddb0981314c2fe07f7.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="88, 32, 35, 15" CvTextArgument="View" CvType="Text" DesignTimeRectangle="88, 32, 35, 15" ElementType="Text" FriendlyName="'View'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Utilities'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,241" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="dd7afcea-9fed-431c-b96e-e39ca7b6fc11" Text="[&quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; +&quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Right)]&quot;+&quot;[k(Enter)]&quot;]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable CvTextArea="137, 32, 52, 16" CvTextArgument="Utilities" CvType="Text" DesignTimeRectangle="137, 32, 52, 16" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Utilities'" Guid="e16c8125-33c9-46a8-9efe-ee40f40654f2" InformativeScreenshot="e457f8f770a9d98bf77e3ac54bcbed72.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="532,210.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)]u[u(hk)][d(hk)]u[u(hk)][d(hk)][k(Enter)][u(hk)][d(hk)]n[u(hk)]" Version="V3" />
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,440.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,330.4" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Utilities'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="dd7afcea-9fed-431c-b96e-e39ca7b6fc11" Text="[&quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; +&quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Right)]&quot;+&quot;[k(Enter)]&quot;]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable CvTextArea="111, 26, 40, 12" CvTextArgument="Utilities" CvType="Text" DesignTimeRectangle="111, 26, 40, 12" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Utilities'" Guid="54c626cd-884e-4020-9d43-0d180f8de744" InformativeScreenshot="c723cd6b1f0be1bcd13f753d6c6a6d52.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="164, 26, 31, 15" CvTextArgument="Setup" CvType="Text" DesignTimeRectangle="164, 26, 31, 15" ElementType="Text" FriendlyName="'Setup'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,164.8" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: 2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" sap:VirtualizedContainerService.HintSize="353.6,76" sap2010:WorkflowViewState.IdRef="NApplicationCard_13" OpenMode="Never" ScopeGuid="db3d8184-13a1-4ec6-ade7-5622e5f90121" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,333.6" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="False" DisplayName="Type Into '(f9f3bb5e-86d1-4674-bc3…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,243.2" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" ScopeIdentifier="db3d8184-13a1-4ec6-ade7-5622e5f90121" Text="[&quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; +&quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Down)]&quot; + &quot;[k(Right)]&quot;+&quot;[k(Enter)]&quot;]" Version="V3">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="0, 0, 374, 416" DesignTimeScaleFactor="1.25" FriendlyName="'(f9f3bb5e-86d1-4674-bc3…'" Guid="5c80debe-2495-461c-b3d7-ab533af12c02" InformativeScreenshot="9561d93c6945a109e3a425a784e66745.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title=' (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.FuzzySelectorArgument>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </uix:TargetAnchorable.FuzzySelectorArgument>
+                                    </uix:TargetAnchorable>
+                                  </uix:NTypeInto.Target>
+                                </uix:NTypeInto>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="0, 0, 1920, 1020" FilePath="C:\Program Files\Remote Desktop\msrdc.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARbSURBVFhHlZdZSJRRFMe/h3oQgl56iKCHCDQiCISiiEKiECIjiKCJaIOaFlotjWrQlMpCrabNrGRsM6V0Whmzsk0y20RKKVu1QoSJop0eTvfce84391vHDvw5M/fq/f3P+c4334zBUf86DsX3u2BNrNNTK6++6JOC0TZYefGZYw21ub4Djj98B4RVgeBAbTsM298MA4pug7HtelL1y4tZZGy9ql5vvmBd31Qr9zDj+5QtdTCq9BqMPXBLmTjZ1gPTq9okuF+BO0yXfrgEMFgXmiDpBlhyfUMNrDrRAMaCaIes3A8uQZRZDLZU7iIdjFBdgxcVgpEReeJZvQ5k2cGyIpEzKlrktS1rUZIt9oFLTVulDCBcN8AwL9nhmHNj7aDHgqoH3mDUutNgTF1KBvKvWQC63GCOLFqdc+ExoVUETrd4g4X6rz1BBkTrkhlwNUHXl6+1awcEUII4E5jlbgAPpNcM1F9j1g1wZfYOoAEd7ib/DpARO1AH4/0cvvcKnvd8Jaw1vvz8AzWt7yG9+IoTHiwDY/IiMqABZbbJYkKA8cMEJ/5/ovLRWwtcZocBmxjMFbOizz/SsSriP347uvCoKy47oAeaMOFmB8rv/Rc8q+IuHQfw889fCJxsksPluAsit2Dg+ohjfVJxVMG9DLhBdWEVHHg4tzU3+pBWVaABBuGccIQbn3kbkBAPuGybyHfe9NJRABnhetOAWwcQgnvp28/RKkB9e7eCL96rGcg97wDaxSDdwLLqZnPd0YFj4kHDlQrhnYBGUkNnFBzXJ83zN8CH69LbicPHlSYzYEL1zAb6CkelFtbK4dMDjbyPf6N3KkwDDLTDTQPiOiYDG6srVRb/jDmrrEFC/QINVbV0wpLKGzA0uzwB1SUNHBEt9KkY4VIElxWI93iL7Yi1wpveL4T0j8YXH2B0nngQLSxJiDtgh7IYZoG7aEhOJVQ0dRDKPwKHLicMjJ/tbgAPNYFkwFeinfYhxNZnltZBSeyxZWbw9YBgWHwVK7YawIOSwQdlR+SthBq6SezhdcQ9kXPONRFCRaBMPMapUpyB+PdftCP2Dl50GnDAXYSTzYEDZg6TnwEECWEnOAqj98GYt5MM7LnsC9WFn+McWJFpQIAcBrhKlIDtuNRMO6C+DesG3GCmEEA5ZflhyxMuVCcqoTZ7GhAgvOadPZ9pByBzd3UfDWhwlh109GYrpOef8jSQHopAY0cXrYI0IuFswPJ49IDqSgnuhzsvrd8HMPQhw2jr7nV8RuAdMGGbGF6Ezw5RB0rEU5ABPmBuNQpbGm54Ssf2LR68/gTj8iKJ6rPWw+Apc8HA1smDvaCcWTxYQsM3lsuJxsPdAtfxEmUWVSXAWDlVv7ygVP0+HLlil3Qk/0CH6WIw/o09C+WebSSsCjkDtGfMKVAZwfhraMwMSJs6y/oLeeO+CkjLmg/GyIlKIyb4K3WcJS8NFUHnu25T04PZas+mtMkzYU1+EcEN4x+dQxI3PmW5bwAAAABJRU5ErkJggg==" InformativeScreenshot="9b4d8dfc431a977a193dbbdea815799d.png" Selector="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" Title="2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" />
+                          </uix:NApplicationCard.TargetApp>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NApplicationCard>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: SurePrep Integration (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" sap:VirtualizedContainerService.HintSize="532,1774.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="Never" ScopeGuid="0c0b934c-84b9-4587-a176-07691a3f556b" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1411.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBefore="5" DisplayName="Type Into 'SurePrep Integration'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="0c0b934c-84b9-4587-a176-07691a3f556b" Text="[in_ClientID]" Version="V3">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="0, 0, 1062, 706" DesignTimeScaleFactor="1.25" FriendlyName="'SurePrep Integration'" Guid="74018f48-54b1-4711-9f2d-600dda839637" InformativeScreenshot="0847ef7f9708e5b88a5661d978e9125a.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='SurePrep Integration (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.FuzzySelectorArgument>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <Literal x:TypeArguments="x:String" Value="" />
+                                  </InArgument>
+                                </uix:TargetAnchorable.FuzzySelectorArgument>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="Click 'Select .&gt;'" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0c0b934c-84b9-4587-a176-07691a3f556b" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CvElementArea="423, 369, 92, 29" CvTextArea="441, 375, 53, 16" CvTextArgument="Select .&gt;" CvType="Button" DesignTimeRectangle="423, 369, 92, 29" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Select .&gt;'" Guid="3d49f154-b6b2-4667-a082-22de6ebfe0f7" InformativeScreenshot="2c32e3727c8b81687b07f4aea074699b.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='SurePrep Integration (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvElementArea="300, 369, 112, 29" CvType="Button" DesignTimeRectangle="300, 369, 112, 29" ElementType="Button" FriendlyName="'msrdc.exe SurePrep'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NClick>
+                          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="8a1a3c15-5251-466b-b22e-4f25411a476d" DisplayName="CV Screen Scope 'wfica32.exe SurePrep'" sap:VirtualizedContainerService.HintSize="434,511" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+                            <p:CVScope.Body>
+                              <ActivityAction x:TypeArguments="x:Object">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                  <p:CvCheckWithDescriptor DelayScreenshotAfterScroll="{x:Null}" InRegion="{x:Null}" ScrollDirection="{x:Null}" Action="Uncheck" Descriptor="[&quot;Target: CheckBox (12,67,15,14)&quot; +&#xA;&quot;Anchor: Text 'Send client data to SurePrep Binder and Document Request List' (28,68,305,12)&quot;]" DesignTimeCacheId="64acf239-f05b-4edb-aee7-2edd92ce0eb9" DesignTimeScaleFactor="1.25" DisplayName="CV Check - CheckBox" sap:VirtualizedContainerService.HintSize="400,160.8" sap2010:WorkflowViewState.IdRef="CvCheckWithDescriptor_1" InformativeScreenshot="7fa035d2c1fe7f2c44d2545eb6465044" NumberOfScrolls="2" Version="V6">
+                                    <p:CvCheckWithDescriptor.DesignTimeDescriptor>
+                                      <uc:CvDescriptor Id="6192c43f-89d7-4598-96d6-17f72e8a9aac">
+                                        <uc:CvDescriptor.Anchors>
+                                          <x:Array Type="uc:CvElementDescriptor">
+                                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="28, 68, 305, 12" ElementType="Text" Text="Send client data to SurePrep Binder and Document Request List" />
+                                          </x:Array>
+                                        </uc:CvDescriptor.Anchors>
+                                        <uc:CvDescriptor.Target>
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="12, 67, 15, 14" ElementType="CheckBox" />
+                                        </uc:CvDescriptor.Target>
+                                      </uc:CvDescriptor>
+                                    </p:CvCheckWithDescriptor.DesignTimeDescriptor>
+                                  </p:CvCheckWithDescriptor>
+                                </Sequence>
+                              </ActivityAction>
+                            </p:CVScope.Body>
+                            <p:CVScope.DesignTimeCache>
+                              <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                            </p:CVScope.DesignTimeCache>
+                            <p:CVScope.DesignTimeCacheContainer>
+                              <uc:CvCacheContainer>
+                                <uc:CvCacheContainer.Caches>
+                                  <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                                    <uc:CVCache DataSent="False" DisplayName="Screen CV Check - 'Send client " Id="64acf239-f05b-4edb-aee7-2edd92ce0eb9" InformativeScreenshot="2c6b73231a8854f4df776c9fd11cb210" LogicalPosition="967, 563" OcrText="Options Create 1040 client in TaxCaddy (If SurePrep credentials are missing, selecting this checkbox will open the Import API Key dialog.) Send client data to SurePrep Binder and Document Request List" Position="967, 563" ScaleFactor="1.25" ScreenshotGuid="3d9b4918-1d79-437a-ab06-42f930e0c62e" ServerVersion="1">
+                                      <uc:CVCache.CvAnchorRelations>
+                                        <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="0">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>1</x:Int32>
+                                                <x:Int32>2</x:Int32>
+                                                <x:Int32>3</x:Int32>
+                                                <x:Int32>4</x:Int32>
+                                                <x:Int32>5</x:Int32>
+                                                <x:Int32>6</x:Int32>
+                                                <x:Int32>7</x:Int32>
+                                                <x:Int32>8</x:Int32>
+                                                <x:Int32>9</x:Int32>
+                                                <x:Int32>10</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="1">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>21</x:Int32>
+                                                <x:Int32>22</x:Int32>
+                                                <x:Int32>23</x:Int32>
+                                                <x:Int32>24</x:Int32>
+                                                <x:Int32>25</x:Int32>
+                                                <x:Int32>26</x:Int32>
+                                                <x:Int32>27</x:Int32>
+                                                <x:Int32>28</x:Int32>
+                                                <x:Int32>29</x:Int32>
+                                                <x:Int32>30</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                        </scg:List>
+                                      </uc:CVCache.CvAnchorRelations>
+                                      <uc:CVCache.CvUiElements>
+                                        <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
+                                          <uc:CvElementInfo Category="CheckBox" Region="12, 27, 14, 14" />
+                                          <uc:CvElementInfo Category="CheckBox" Region="12, 67, 15, 14" />
+                                          <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="24, 67, 308, 16" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="8, 43, 357, 21" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="11, 64, 330, 16" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="16, 28, 332, 28" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="9, 64, 20, 19" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="8, 24, 348, 19" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="9, 41, 20, 23" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="293, 27, 97, 16" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="354, 44, 39, 20" />
+                                        </scg:List>
+                                      </uc:CVCache.CvUiElements>
+                                      <uc:CVCache.OcrTexts>
+                                        <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="31">
+                                          <uc:OcrTextInfo Region="5, 8, 38, 13" Text="Options" />
+                                          <uc:OcrTextInfo Region="28, 28, 32, 12" Text="Create" />
+                                          <uc:OcrTextInfo Region="64, 28, 24, 12" Text="1040" />
+                                          <uc:OcrTextInfo Region="89, 28, 26, 12" Text="client" />
+                                          <uc:OcrTextInfo Region="117, 28, 9, 12" Text="in" />
+                                          <uc:OcrTextInfo Region="128, 28, 50, 13" Text="TaxCaddy" />
+                                          <uc:OcrTextInfo Region="180, 28, 10, 12" Text="(If" />
+                                          <uc:OcrTextInfo Region="192, 28, 44, 13" Text="SurePrep" />
+                                          <uc:OcrTextInfo Region="240, 28, 52, 12" Text="credentials" />
+                                          <uc:OcrTextInfo Region="293, 32, 16, 8" Text="are" />
+                                          <uc:OcrTextInfo Region="310, 28, 38, 13" Text="missing," />
+                                          <uc:OcrTextInfo Region="29, 48, 44, 13" Text="selecting" />
+                                          <uc:OcrTextInfo Region="74, 48, 17, 12" Text="this" />
+                                          <uc:OcrTextInfo Region="93, 48, 48, 12" Text="checkbox" />
+                                          <uc:OcrTextInfo Region="144, 48, 16, 12" Text="will" />
+                                          <uc:OcrTextInfo Region="161, 50, 24, 10" Text="open" />
+                                          <uc:OcrTextInfo Region="188, 48, 16, 12" Text="the" />
+                                          <uc:OcrTextInfo Region="205, 48, 30, 13" Text="Import" />
+                                          <uc:OcrTextInfo Region="236, 48, 18, 12" Text="API" />
+                                          <uc:OcrTextInfo Region="257, 48, 20, 13" Text="Key" />
+                                          <uc:OcrTextInfo Region="278, 48, 34, 13" Text="dialog.)" />
+                                          <uc:OcrTextInfo Region="28, 68, 26, 12" Text="Send" />
+                                          <uc:OcrTextInfo Region="56, 68, 26, 12" Text="client" />
+                                          <uc:OcrTextInfo Region="84, 68, 22, 12" Text="data" />
+                                          <uc:OcrTextInfo Region="108, 69, 10, 10" Text="to" />
+                                          <uc:OcrTextInfo Region="121, 68, 44, 12" Text="SurePrep" />
+                                          <uc:OcrTextInfo Region="168, 68, 32, 12" Text="Binder" />
+                                          <uc:OcrTextInfo Region="200, 68, 20, 12" Text="and" />
+                                          <uc:OcrTextInfo Region="222, 68, 49, 12" Text="Document" />
+                                          <uc:OcrTextInfo Region="274, 68, 40, 12" Text="Request" />
+                                          <uc:OcrTextInfo Region="317, 68, 16, 12" Text="List" />
+                                        </scg:List>
+                                      </uc:CVCache.OcrTexts>
+                                    </uc:CVCache>
+                                    <uc:CVCache DataSent="False" DisplayName="Main Screen" Id="8a1a3c15-5251-466b-b22e-4f25411a476d" InformativeScreenshot="6ebfde94cb62345fcde6cf06f4b72ed1" LogicalPosition="429, 158" OcrText="SurePrep Integration ? X Data location: &lt;defaulb (Y:\UT23DATA\) v Clients available: 221 Number highlighted 1 Clients selected 1 Client ID Name Entity ^ Clent ID Name Entity TESTDEMO1 1040 PRIYAP 1040 YVT1041 1040 TEST789 1040 FETCH26 1040 YVS1040 1040 TEST78 1040 TEST4O 1040 SHREYA1040 1040 YVR1040 1040 RAPCHECK01 1040 Select All -&gt;&gt; Select .&gt; &lt;- Remove Focus Options 1040 1041 Create 1040 client in TaxCaddy (f SurePrep credentials are missing, selecting this checkbox will open the Import API Key dialog.) Preparer/reviewer/staff: (All Preparers) v Send client data to SurePrep Binder and Document Request List Event: All clients, regardless of status Modify... Continue Cancel" Position="429, 158" ScaleFactor="1.25" ScreenshotGuid="350e4ee5-1bd1-436b-96ca-67e1858ada21" ServerVersion="1">
+                                      <uc:CVCache.CvAnchorRelations>
+                                        <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="8">
+                                          <uc:AnchorRelationInfo IsTargetText="True" Target="17">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>15</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="7">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>84</x:Int32>
+                                                <x:Int32>85</x:Int32>
+                                                <x:Int32>86</x:Int32>
+                                                <x:Int32>87</x:Int32>
+                                                <x:Int32>88</x:Int32>
+                                                <x:Int32>89</x:Int32>
+                                                <x:Int32>90</x:Int32>
+                                                <x:Int32>91</x:Int32>
+                                                <x:Int32>92</x:Int32>
+                                                <x:Int32>93</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="6">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>70</x:Int32>
+                                                <x:Int32>71</x:Int32>
+                                                <x:Int32>72</x:Int32>
+                                                <x:Int32>73</x:Int32>
+                                                <x:Int32>74</x:Int32>
+                                                <x:Int32>75</x:Int32>
+                                                <x:Int32>76</x:Int32>
+                                                <x:Int32>77</x:Int32>
+                                                <x:Int32>78</x:Int32>
+                                                <x:Int32>79</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="69">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>80</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="10">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>59</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="68">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>4</x:Int32>
+                                                <x:Int32>5</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="8">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>58</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="15">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>94</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                        </scg:List>
+                                      </uc:CVCache.CvAnchorRelations>
+                                      <uc:CVCache.CvTables>
+                                        <x:Array Type="uc:CvTableInfo">
+                                          <uc:CvTableInfo>
+                                            <uc:CvTableInfo.Columns>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>13</x:Int32>
+                                                <x:Int32>132</x:Int32>
+                                                <x:Int32>312</x:Int32>
+                                                <x:Int32>390</x:Int32>
+                                                <x:Int32>393</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Columns>
+                                            <uc:CvTableInfo.Rows>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>96</x:Int32>
+                                                <x:Int32>120</x:Int32>
+                                                <x:Int32>136</x:Int32>
+                                                <x:Int32>153</x:Int32>
+                                                <x:Int32>169</x:Int32>
+                                                <x:Int32>184</x:Int32>
+                                                <x:Int32>200</x:Int32>
+                                                <x:Int32>216</x:Int32>
+                                                <x:Int32>232</x:Int32>
+                                                <x:Int32>248</x:Int32>
+                                                <x:Int32>265</x:Int32>
+                                                <x:Int32>284</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Rows>
+                                          </uc:CvTableInfo>
+                                          <uc:CvTableInfo>
+                                            <uc:CvTableInfo.Columns>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>426</x:Int32>
+                                                <x:Int32>544</x:Int32>
+                                                <x:Int32>741</x:Int32>
+                                                <x:Int32>821</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Columns>
+                                            <uc:CvTableInfo.Rows>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>96</x:Int32>
+                                                <x:Int32>121</x:Int32>
+                                                <x:Int32>140</x:Int32>
+                                              </x:Array>
+                                            </uc:CvTableInfo.Rows>
+                                          </uc:CvTableInfo>
+                                        </x:Array>
+                                      </uc:CVCache.CvTables>
+                                      <uc:CVCache.CvUiElements>
+                                        <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
+                                          <uc:CvElementInfo Category="Button" Region="264, 429, 64, 23" />
+                                          <uc:CvElementInfo Category="Button" Region="429, 295, 73, 23" />
+                                          <uc:CvElementInfo Category="Button" Region="338, 295, 73, 23" />
+                                          <uc:CvElementInfo Category="Button" Region="751, 528, 76, 23" />
+                                          <uc:CvElementInfo Category="Button" Region="240, 295, 90, 23" />
+                                          <uc:CvElementInfo Category="Button" Region="663, 528, 74, 23" />
+                                          <uc:CvElementInfo Category="CheckBox" Region="443, 351, 15, 15" />
+                                          <uc:CvElementInfo Category="CheckBox" Region="443, 391, 15, 15" />
+                                          <uc:CvElementInfo Category="CheckBox" Region="35, 356, 16, 15" />
+                                          <uc:CvElementInfo Category="ArrowButton" Region="391, 266, 20, 20" />
+                                          <uc:CvElementInfo Category="CheckBox" Region="95, 356, 16, 15" />
+                                          <uc:CvElementInfo Category="Button" Region="392, 340, 21, 21" />
+                                          <uc:CvElementInfo Category="ArrowButton" Region="391, 99, 20, 19" />
+                                          <uc:CvElementInfo Category="CloseButton" Region="816, 5, 17, 17" />
+                                          <uc:CvElementInfo Category="Icon" Region="774, 5, 13, 18" />
+                                          <uc:CvElementInfo Category="InputBox" Region="31, 427, 217, 34" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 96, 79, 24" />
+                                          <uc:CvElementInfo Category="Cell" Region="741, 96, 80, 26" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 120, 117, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="741, 121, 80, 18" />
+                                          <uc:CvElementInfo Category="Cell" Region="544, 121, 196, 18" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 216, 79, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 184, 79, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 154, 79, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="427, 96, 117, 26" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 154, 117, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 120, 180, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 96, 180, 24" />
+                                          <uc:CvElementInfo Category="Cell" Region="427, 121, 117, 18" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 170, 180, 15" />
+                                          <uc:CvElementInfo Category="Cell" Region="544, 96, 196, 26" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 232, 79, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 170, 79, 15" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 200, 79, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 248, 79, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 120, 79, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 184, 117, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 136, 79, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 154, 180, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 200, 180, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 96, 117, 24" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 170, 117, 15" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 184, 180, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 216, 180, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 232, 117, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 232, 180, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="312, 265, 81, 18" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 248, 180, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 216, 117, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 265, 180, 18" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 200, 117, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="132, 136, 180, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 248, 117, 16" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 265, 117, 18" />
+                                          <uc:CvElementInfo Category="Cell" Region="13, 136, 117, 16" />
+                                          <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="396, 345, 15, 11" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="300, 300, 18, 15" />
+                                          <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="521, 81, 11, 14" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="436, 300, 16, 13" />
+                                          <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="384, 300, 15, 14" />
+                                          <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="300, 300, 17, 15" />
+                                          <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="392, 340, 21, 21" />
+                                          <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="437, 300, 14, 13" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="384, 300, 14, 13" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="32, 427, 216, 34" />
+                                          <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="107, 82, 19, 14" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="392, 340, 21, 21" />
+                                          <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="544, 136, 196, 20" />
+                                          <uc:CvElementInfo Category="InputBox" Region="95, 44, 404, 23" />
+                                          <uc:CvElementInfo Category="InputBox" Region="148, 383, 196, 22" />
+                                          <uc:CvElementInfo Category="ArrowButton" Region="478, 45, 19, 20" />
+                                          <uc:CvElementInfo Category="ArrowButton" Region="325, 384, 18, 20" />
+                                        </scg:List>
+                                      </uc:CVCache.CvUiElements>
+                                      <uc:CVCache.OcrTexts>
+                                        <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="103">
+                                          <uc:OcrTextInfo Region="8, 9, 38, 12" Text="SurePrep" />
+                                          <uc:OcrTextInfo Region="48, 9, 46, 12" Text="Integration" />
+                                          <uc:OcrTextInfo Region="776, 8, 8, 12" Text="?" />
+                                          <uc:OcrTextInfo Region="817, 8, 12, 12" Text="X" />
+                                          <uc:OcrTextInfo Region="16, 48, 24, 12" Text="Data" />
+                                          <uc:OcrTextInfo Region="42, 48, 40, 12" Text="location:" />
+                                          <uc:OcrTextInfo Region="98, 48, 44, 12" Text="&lt;defaulb" />
+                                          <uc:OcrTextInfo Region="144, 48, 84, 13" Text="(Y:\UT23DATA\)" />
+                                          <uc:OcrTextInfo Region="480, 50, 12, 9" Text="v" />
+                                          <uc:OcrTextInfo Region="17, 82, 32, 12" Text="Clients" />
+                                          <uc:OcrTextInfo Region="52, 82, 45, 12" Text="available:" />
+                                          <uc:OcrTextInfo Region="108, 82, 17, 12" Text="221" />
+                                          <uc:OcrTextInfo Region="192, 82, 37, 12" Text="Number" />
+                                          <uc:OcrTextInfo Region="232, 82, 53, 13" Text="highlighted" />
+                                          <uc:OcrTextInfo Region="292, 82, 5, 12" Text="1" />
+                                          <uc:OcrTextInfo Region="432, 82, 32, 12" Text="Clients" />
+                                          <uc:OcrTextInfo Region="465, 82, 42, 12" Text="selected" />
+                                          <uc:OcrTextInfo Region="524, 82, 5, 12" Text="1" />
+                                          <uc:OcrTextInfo Region="21, 108, 26, 9" Text="Client" />
+                                          <uc:OcrTextInfo Region="49, 108, 10, 9" Text="ID" />
+                                          <uc:OcrTextInfo Region="138, 108, 28, 9" Text="Name" />
+                                          <uc:OcrTextInfo Region="320, 108, 24, 12" Text="Entity" />
+                                          <uc:OcrTextInfo Region="394, 104, 10, 8" Text="^" />
+                                          <uc:OcrTextInfo Region="436, 108, 26, 9" Text="Clent" />
+                                          <uc:OcrTextInfo Region="464, 108, 10, 9" Text="ID" />
+                                          <uc:OcrTextInfo Region="552, 108, 28, 9" Text="Name" />
+                                          <uc:OcrTextInfo Region="749, 108, 25, 12" Text="Entity" />
+                                          <uc:OcrTextInfo Region="20, 126, 54, 10" Text="TESTDEMO1" />
+                                          <uc:OcrTextInfo Region="318, 126, 22, 10" Text="1040" />
+                                          <uc:OcrTextInfo Region="434, 126, 32, 9" Text="PRIYAP" />
+                                          <uc:OcrTextInfo Region="749, 128, 21, 9" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 144, 37, 9" Text="YVT1041" />
+                                          <uc:OcrTextInfo Region="318, 144, 21, 9" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 160, 36, 9" Text="TEST789" />
+                                          <uc:OcrTextInfo Region="318, 160, 21, 9" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 176, 40, 9" Text="FETCH26" />
+                                          <uc:OcrTextInfo Region="318, 176, 21, 9" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 192, 40, 9" Text="YVS1040" />
+                                          <uc:OcrTextInfo Region="318, 192, 21, 9" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 208, 32, 9" Text="TEST78" />
+                                          <uc:OcrTextInfo Region="318, 208, 21, 8" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 222, 32, 10" Text="TEST4O" />
+                                          <uc:OcrTextInfo Region="318, 224, 21, 9" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 238, 56, 10" Text="SHREYA1040" />
+                                          <uc:OcrTextInfo Region="318, 240, 21, 9" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 256, 40, 9" Text="YVR1040" />
+                                          <uc:OcrTextInfo Region="318, 256, 21, 9" Text="1040" />
+                                          <uc:OcrTextInfo Region="20, 270, 58, 10" Text="RAPCHECK01" />
+                                          <uc:OcrTextInfo Region="320, 272, 20, 8" Text="1040" />
+                                          <uc:OcrTextInfo Region="253, 300, 30, 12" Text="Select" />
+                                          <uc:OcrTextInfo Region="285, 300, 12, 12" Text="All" />
+                                          <uc:OcrTextInfo Region="300, 301, 14, 10" Text="-&gt;&gt;" />
+                                          <uc:OcrTextInfo Region="352, 300, 32, 12" Text="Select" />
+                                          <uc:OcrTextInfo Region="386, 301, 8, 10" Text=".&gt;" />
+                                          <uc:OcrTextInfo Region="440, 302, 9, 8" Text="&lt;-" />
+                                          <uc:OcrTextInfo Region="452, 300, 40, 12" Text="Remove" />
+                                          <uc:OcrTextInfo Region="29, 332, 30, 10" Text="Focus" />
+                                          <uc:OcrTextInfo Region="436, 332, 36, 12" Text="Options" />
+                                          <uc:OcrTextInfo Region="52, 357, 25, 13" Text="1040" />
+                                          <uc:OcrTextInfo Region="112, 357, 25, 13" Text="1041" />
+                                          <uc:OcrTextInfo Region="458, 352, 32, 10" Text="Create" />
+                                          <uc:OcrTextInfo Region="492, 352, 25, 12" Text="1040" />
+                                          <uc:OcrTextInfo Region="520, 352, 26, 10" Text="client" />
+                                          <uc:OcrTextInfo Region="548, 352, 9, 10" Text="in" />
+                                          <uc:OcrTextInfo Region="560, 352, 48, 14" Text="TaxCaddy" />
+                                          <uc:OcrTextInfo Region="610, 352, 9, 13" Text="(f" />
+                                          <uc:OcrTextInfo Region="622, 352, 44, 13" Text="SurePrep" />
+                                          <uc:OcrTextInfo Region="669, 352, 52, 10" Text="credentials" />
+                                          <uc:OcrTextInfo Region="724, 354, 16, 8" Text="are" />
+                                          <uc:OcrTextInfo Region="740, 352, 38, 14" Text="missing," />
+                                          <uc:OcrTextInfo Region="460, 370, 42, 14" Text="selecting" />
+                                          <uc:OcrTextInfo Region="504, 370, 17, 12" Text="this" />
+                                          <uc:OcrTextInfo Region="524, 370, 48, 12" Text="checkbox" />
+                                          <uc:OcrTextInfo Region="573, 372, 16, 10" Text="will" />
+                                          <uc:OcrTextInfo Region="592, 373, 24, 12" Text="open" />
+                                          <uc:OcrTextInfo Region="617, 372, 16, 10" Text="the" />
+                                          <uc:OcrTextInfo Region="636, 372, 30, 12" Text="Import" />
+                                          <uc:OcrTextInfo Region="668, 370, 17, 12" Text="API" />
+                                          <uc:OcrTextInfo Region="688, 372, 20, 12" Text="Key" />
+                                          <uc:OcrTextInfo Region="708, 370, 36, 14" Text="dialog.)" />
+                                          <uc:OcrTextInfo Region="30, 388, 113, 13" Text="Preparer/reviewer/staff:" />
+                                          <uc:OcrTextInfo Region="152, 388, 16, 12" Text="(All" />
+                                          <uc:OcrTextInfo Region="168, 388, 48, 12" Text="Preparers)" />
+                                          <uc:OcrTextInfo Region="328, 389, 10, 8" Text="v" />
+                                          <uc:OcrTextInfo Region="458, 392, 28, 12" Text="Send" />
+                                          <uc:OcrTextInfo Region="488, 392, 25, 12" Text="client" />
+                                          <uc:OcrTextInfo Region="514, 392, 22, 12" Text="data" />
+                                          <uc:OcrTextInfo Region="538, 392, 10, 10" Text="to" />
+                                          <uc:OcrTextInfo Region="552, 392, 44, 13" Text="SurePrep" />
+                                          <uc:OcrTextInfo Region="597, 392, 32, 12" Text="Binder" />
+                                          <uc:OcrTextInfo Region="632, 392, 18, 10" Text="and" />
+                                          <uc:OcrTextInfo Region="652, 392, 50, 12" Text="Document" />
+                                          <uc:OcrTextInfo Region="704, 392, 40, 13" Text="Request" />
+                                          <uc:OcrTextInfo Region="746, 392, 17, 12" Text="List" />
+                                          <uc:OcrTextInfo Region="32, 414, 32, 10" Text="Event:" />
+                                          <uc:OcrTextInfo Region="33, 430, 13, 12" Text="All" />
+                                          <uc:OcrTextInfo Region="48, 430, 33, 13" Text="clients," />
+                                          <uc:OcrTextInfo Region="84, 432, 49, 12" Text="regardless" />
+                                          <uc:OcrTextInfo Region="136, 432, 10, 12" Text="of" />
+                                          <uc:OcrTextInfo Region="148, 432, 28, 10" Text="status" />
+                                          <uc:OcrTextInfo Region="274, 434, 40, 13" Text="Modify..." />
+                                          <uc:OcrTextInfo Region="677, 533, 44, 12" Text="Continue" />
+                                          <uc:OcrTextInfo Region="772, 533, 34, 12" Text="Cancel" />
+                                        </scg:List>
+                                      </uc:CVCache.OcrTexts>
+                                    </uc:CVCache>
+                                  </scg:List>
+                                </uc:CvCacheContainer.Caches>
+                              </uc:CvCacheContainer>
+                            </p:CVScope.DesignTimeCacheContainer>
+                            <p:CVScope.OCREngine>
+                              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                                <ActivityFunc.Argument>
+                                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                                </ActivityFunc.Argument>
+                                <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                              </ActivityFunc>
+                            </p:CVScope.OCREngine>
+                            <p:CVScope.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="e2007f6d-03ca-4086-8ebe-d9ef21395650" InformativeScreenshot="c4e8b978652283eb9d1360f83a3048e1" WaitForReady="INTERACTIVE">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                              </ui:Target>
+                            </p:CVScope.Target>
+                            <p:CVScope.UseLocalServer>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </p:CVScope.UseLocalServer>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </p:CVScope>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Send client'" sap:VirtualizedContainerService.HintSize="433.6,189.6" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0c0b934c-84b9-4587-a176-07691a3f556b" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CvTextArea="573, 490, 383, 17" CvTextArgument="Send client data to SurePrep Binder and Document Request List" CvType="Text" DesignTimeRectangle="573, 490, 382, 17" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Send client'" Guid="efc899e1-774c-4cad-b77d-204f334142cc" InformativeScreenshot="6dfc2678079d9996b867372461174ec9.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='SurePrep Integration (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Continue'" sap:VirtualizedContainerService.HintSize="433.6,180.8" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0c0b934c-84b9-4587-a176-07691a3f556b" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CvElementArea="828, 661, 94, 29" CvTextArea="847, 667, 55, 15" CvTextArgument="Continue" CvType="Button" DesignTimeRectangle="828, 661, 94, 29" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Continue'" Guid="a98f1c90-6dd6-46fe-a3f3-cf8bd6b70e9c" InformativeScreenshot="4aeee26bd9576ab76df32f32a449a364.png" ScopeSelectorArgument="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='SurePrep Integration (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvElementArea="940, 661, 94, 29" CvType="Button" DesignTimeRectangle="940, 661, 94, 29" ElementType="Button" FriendlyName="'msrdc.exe SurePrep'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="429, 153, 1062, 706" FilePath="C:\Program Files\Remote Desktop\msrdc.exe" IconBase64="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" InformativeScreenshot="690d45d479c31af9deee9ff505c3dbed.png" Selector="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='SurePrep Integration (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" Title="SurePrep Integration - \\Remote, 256-bit SSL/TLS." />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: SurePrep Integration Status (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)" sap:VirtualizedContainerService.HintSize="532,49.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_10" OpenMode="Never" ScopeGuid="52548211-9b52-44ff-8167-de37cffbd8ee" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,272.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Done'" sap:VirtualizedContainerService.HintSize="353.6,182.4" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="52548211-9b52-44ff-8167-de37cffbd8ee" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable CvElementArea="558, 454, 93, 28" CvTextArea="587, 461, 35, 15" CvTextArgument="Done" CvType="Button" DesignTimeRectangle="558, 454, 93, 28" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Done'" Guid="2f6155d6-1610-4699-9824-410a1a1729f4" InformativeScreenshot="4d013806d2b57048b522a209ba0356b2.png" ScopeSelectorArgument="&lt;wnd aaname='SurePrep Integration Status (f9f3bb5e-86d1-4674-bc37-ad9f4637dbd*' app='msrdc.exe' cls='RAIL_WINDOW' title='SurePrep Integration Status (f9f3bb5e-86d1-4674-bc37-ad9f4637dbd*' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="823, 370, 684, 504" FilePath="C:\Program Files\Remote Desktop\msrdc.exe" IconBase64="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" InformativeScreenshot="72124a2c8ee09f6dee879183f4ce92ac.png" Selector="&lt;wnd aaname='SurePrep Integration Status (f9f3bb5e-86d1-4674-bc37-ad9f4637dbd*' app='msrdc.exe' cls='RAIL_WINDOW' title='SurePrep Integration Status (f9f3bb5e-86d1-4674-bc37-ad9f4637dbd*' /&gt;" Title="SurePrep Integration Status - \\Remote, 256-bit SSL/TLS." />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 1920, 1020" FilePath="C:\Program Files\Remote Desktop\msrdc.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARbSURBVFhHlZdZSJRRFMe/h3oQgl56iKCHCDQiCISiiEKiECIjiKCJaIOaFlotjWrQlMpCrabNrGRsM6V0Whmzsk0y20RKKVu1QoSJop0eTvfce84391vHDvw5M/fq/f3P+c4334zBUf86DsX3u2BNrNNTK6++6JOC0TZYefGZYw21ub4Djj98B4RVgeBAbTsM298MA4pug7HtelL1y4tZZGy9ql5vvmBd31Qr9zDj+5QtdTCq9BqMPXBLmTjZ1gPTq9okuF+BO0yXfrgEMFgXmiDpBlhyfUMNrDrRAMaCaIes3A8uQZRZDLZU7iIdjFBdgxcVgpEReeJZvQ5k2cGyIpEzKlrktS1rUZIt9oFLTVulDCBcN8AwL9nhmHNj7aDHgqoH3mDUutNgTF1KBvKvWQC63GCOLFqdc+ExoVUETrd4g4X6rz1BBkTrkhlwNUHXl6+1awcEUII4E5jlbgAPpNcM1F9j1g1wZfYOoAEd7ib/DpARO1AH4/0cvvcKnvd8Jaw1vvz8AzWt7yG9+IoTHiwDY/IiMqABZbbJYkKA8cMEJ/5/ovLRWwtcZocBmxjMFbOizz/SsSriP347uvCoKy47oAeaMOFmB8rv/Rc8q+IuHQfw889fCJxsksPluAsit2Dg+ohjfVJxVMG9DLhBdWEVHHg4tzU3+pBWVaABBuGccIQbn3kbkBAPuGybyHfe9NJRABnhetOAWwcQgnvp28/RKkB9e7eCL96rGcg97wDaxSDdwLLqZnPd0YFj4kHDlQrhnYBGUkNnFBzXJ83zN8CH69LbicPHlSYzYEL1zAb6CkelFtbK4dMDjbyPf6N3KkwDDLTDTQPiOiYDG6srVRb/jDmrrEFC/QINVbV0wpLKGzA0uzwB1SUNHBEt9KkY4VIElxWI93iL7Yi1wpveL4T0j8YXH2B0nngQLSxJiDtgh7IYZoG7aEhOJVQ0dRDKPwKHLicMjJ/tbgAPNYFkwFeinfYhxNZnltZBSeyxZWbw9YBgWHwVK7YawIOSwQdlR+SthBq6SezhdcQ9kXPONRFCRaBMPMapUpyB+PdftCP2Dl50GnDAXYSTzYEDZg6TnwEECWEnOAqj98GYt5MM7LnsC9WFn+McWJFpQIAcBrhKlIDtuNRMO6C+DesG3GCmEEA5ZflhyxMuVCcqoTZ7GhAgvOadPZ9pByBzd3UfDWhwlh109GYrpOef8jSQHopAY0cXrYI0IuFswPJ49IDqSgnuhzsvrd8HMPQhw2jr7nV8RuAdMGGbGF6Ezw5RB0rEU5ABPmBuNQpbGm54Ssf2LR68/gTj8iKJ6rPWw+Apc8HA1smDvaCcWTxYQsM3lsuJxsPdAtfxEmUWVSXAWDlVv7ygVP0+HLlil3Qk/0CH6WIw/o09C+WebSSsCjkDtGfMKVAZwfhraMwMSJs6y/oLeeO+CkjLmg/GyIlKIyb4K3WcJS8NFUHnu25T04PZas+mtMkzYU1+EcEN4x+dQxI3PmW5bwAAAABJRU5ErkJggg==" InformativeScreenshot="620774d38d415dfca60cfc0b940556c2.png" Selector="&lt;wnd app='msrdc.exe' cls='RAIL_WINDOW' title='2023 UltraTax CS  (f9f3bb5e-86d1-4674-bc37-ad9f4637dbdd)' /&gt;" Title="2023 UltraTax CS  [Office: &lt;default&gt;] - \\Remote, 256-bit SSL/TL*" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
