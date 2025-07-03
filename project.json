@@ -6,6 +6,7 @@
   "dependencies": {
     "ExceptionClassifier": "[1.0.9]",
     "LacerteLogin": "[1.0.4]",
+    "TaxSoftware_Login": "[1.0.19]",
     "UiPath.DataService.Activities": "[25.2.0]",
     "UiPath.Excel.Activities": "[2.24.3]",
     "UiPath.MicrosoftOffice365.Activities": "[2.7.24]",
