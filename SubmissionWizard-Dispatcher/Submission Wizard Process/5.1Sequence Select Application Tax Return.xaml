@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1408.8,2162.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408.8,2200</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sequence_Select_Application_Tax_Return_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -118,7 +118,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Sequence bifurcating the flow for selection of specific tax file path based on tax software." DisplayName="Sequence_Select_Application_Tax_Return" sap:VirtualizedContainerService.HintSize="540.8,2097.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Sequence bifurcating the flow for selection of specific tax file path based on tax software." DisplayName="Sequence_Select_Application_Tax_Return" sap:VirtualizedContainerService.HintSize="540.8,2135.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strAccountReturn" />
       <Variable x:TypeArguments="x:String" Name="strSPClientID" />
@@ -150,7 +150,7 @@
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,84.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;-----------------------------------------------------------------------------------------------------------------------------------------------&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;-----------------------------------------------------------------------------------------------------------------------------------------------&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -269,7 +269,7 @@
     </ui:LogMessage>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Sequence Select Ultra Tax Return workflow" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="SubmissionWizard-Dispatcher\Ultra\Ultra_TaxReturnSelection.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="In_Str_SPClientID">[in_str_ClientID]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_Str_SPClientID">[In_Str_SPClientID]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="In_Str_PsProject">[In_Str_PsProject]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_TaxFilePath">[in_str_TaxFilePath]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_TaxFileName">[in_str_TaxFileName]</InArgument>
@@ -285,20 +285,20 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Create New Binder" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478.4,871.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="487575b6-6830-4460-9475-5640bb0b6b09" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Create New Binder" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="478.4,936.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="487575b6-6830-4460-9475-5640bb0b6b09" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="416,548" sap2010:WorkflowViewState.IdRef="Sequence_34">
+          <Sequence sap:VirtualizedContainerService.HintSize="435.2,613.6" sap2010:WorkflowViewState.IdRef="Sequence_34">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="353.6,189.6" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="487575b6-6830-4460-9475-5640bb0b6b09" Version="V1">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Submit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="372.8,189.6" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="487575b6-6830-4460-9475-5640bb0b6b09" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="572, 675, 41, 15" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Submit' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='btnSubmit' /&gt;&lt;ctrl name='Submit' role='text' automationid='' check:text='Submit' /&gt;" Guid="0fea3baf-28d3-49f1-bcb9-cd0eec52dce3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAATCAYAAAAEaoRHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVEhL7ZTPK0RRFMf9GVY2dlZSNpRsKGVpZysWFgplQfIjhWyULPyIxWSHiJIRM2P8SH6F8psZg2GMn2MeM/PmHe976r7e02D8mqg507fm3nPuOZ9z3703IXGilP6b4tCxUhw6VvoR6MqtAep1WiL6fkMG6Aq1+H1IImGK+ms7GDcsiCSrd4ce5WfKmK2P6I9WufMtJMkB2no45XHn8RR5Ag+Ubq01xGnQSZNl5A34OCjL3mgI+kg/BQ2GgqV2yplv5vFbeTVo0eW278wQoPeZPZvaHBoUO4Lk+CqBcIi/UEgJ0/D5Mvv6nFaS1TGKwxB38XzH6/Ef5pKuGVifd+Jyg4JhmcKKwmsd0pVW23A8Tp9uuOCoe5VSLdXafDTQT3KQitd7KdlcTnuPbgYtWuvRoOt3hjgWuQHSf2Jj0Jb9MYY3ueYi5n13p6HM2QZavXMwOBI5JS+lWWqigtYnr90e5B0EiIBGA/CVqI3BOo7MPH6d+9PQQtitEfcKF1tTm/gstABDfMyghZAA5++rO93lmP5daJwv/dOCMxhUZFq+PaKU6Sp+Cg/9Ho7LsNXRbdBvSO5XC2fbm9i/63MzSP5i27egTS47MxSudPJYSIMWi4XhXAMyb6GV/bg4mIMhDpB6aNx0CC8IGux2zLDvO9Dw4QnGetwvzEHvHo+/qjh0rPQPoUvpBfKIlxYhV5MgAAAAAElFTkSuQmCC" InformativeScreenshot="7cdc2449e286ea3ad96ff0b64d59aead.png" ScopeSelectorArgument="&lt;wnd app='submissionwizard.exe' cls='HwndWrapper*' title='Create New Binder' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -309,9 +309,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'Client ID'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="353.6,268" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="487575b6-6830-4460-9475-5640bb0b6b09" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Client ID'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="372.8,333.6" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="487575b6-6830-4460-9475-5640bb0b6b09" Version="V3">
               <uix:NCheckState.IfExists>
-                <Throw Exception="[new BusinessRuleException(&quot;SP Client ID: &quot;+strSPClientID+&quot; is already created&quot;)]" sap:VirtualizedContainerService.HintSize="249.6,24.8" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                <Throw Exception="[new BusinessRuleException(&quot;SP Client ID: &quot;+strSPClientID+&quot; is already created&quot;)]" sap:VirtualizedContainerService.HintSize="329.6,90.4" sap2010:WorkflowViewState.IdRef="Throw_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Throw>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="74, 50, 222, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Client ID already exists for Tax Year 20*.' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Client ID already exists for Tax Year 20*' role='text' automationid='' check:text='Client ID already exists for Tax Year 2021.' /&gt;" Guid="3d3a4a28-2eb3-419e-b3ba-909cf744d05e" ImageBase64="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" InformativeScreenshot="a71674015b9a53ecaf30fc6e3ef8e5aa.png" ScopeSelectorArgument="&lt;wnd app='submissionwizard.exe' cls='HwndWrapper*' title='SPbinder' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
