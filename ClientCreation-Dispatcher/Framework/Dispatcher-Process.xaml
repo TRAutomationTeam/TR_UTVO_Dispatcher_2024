@@ -137,7 +137,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1172.8,563.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1069.6000000000001,589.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="dic_SubmissionWizardQueueItem" />
       <Variable x:TypeArguments="x:String" Name="ApplicationName" />
@@ -1895,15 +1895,15 @@ Select t=Tuple.Create(name, in_TransactionItem(i))).ToDictionary(Function (x) x.
                                                 <av:PointCollection x:Key="ConnectorLocation">2235.4,1730.2 2265.4,1730.2 2265.4,1730 2370,1730</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <TryCatch DisplayName="TryCatch-Ultra" sap:VirtualizedContainerService.HintSize="452.8,487.20000000000005" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                            <TryCatch DisplayName="TryCatch-Ultra" sap:VirtualizedContainerService.HintSize="452.8,458.4" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                                               <TryCatch.Try>
-                                                <Sequence sap:VirtualizedContainerService.HintSize="416,256" sap2010:WorkflowViewState.IdRef="Sequence_112">
+                                                <Sequence sap:VirtualizedContainerService.HintSize="416,227.2" sap2010:WorkflowViewState.IdRef="Sequence_112">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ULTRA.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ClientCreation-Dispatcher\Tax Softwares\Ultra\ULTRA.xaml">
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ULTRA.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="382.4,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ClientCreation-Dispatcher\Tax Softwares\Ultra\ULTRA.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
                                                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                                       <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_CurrentRow">[dr_ClientCreation]</OutArgument>
@@ -1912,7 +1912,7 @@ Select t=Tuple.Create(name, in_TransactionItem(i))).ToDictionary(Function (x) x.
                                                       <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                                                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isRowFound">[isRowFound]</OutArgument>
-                                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" x:Key="in_DictTestSummaryReport" />
+                                                      <InArgument x:TypeArguments="scg:Dictionary(x:String, sd:DataTable)" x:Key="in_DictTestSummaryReport">[in_DictTestSummaryReport]</InArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1934,7 +1934,7 @@ Select t=Tuple.Create(name, in_TransactionItem(i))).ToDictionary(Function (x) x.
                                                     <ActivityAction.Argument>
                                                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exceptionDetails" />
                                                     </ActivityAction.Argument>
-                                                    <Sequence DisplayName="SE" sap:VirtualizedContainerService.HintSize="444.8,543.2" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                                    <Sequence DisplayName="SE" sap:VirtualizedContainerService.HintSize="416,514.4" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
